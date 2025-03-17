@@ -1,0 +1,8 @@
+/db/
+/incremental_db/
+/output_files/
+/.qsys_edit/
+/greybox_tmp/
+*.bak
+*.qws
+
