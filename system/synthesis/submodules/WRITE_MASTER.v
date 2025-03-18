@@ -29,17 +29,23 @@ module WRITE_MASTER (
             oWM_writeaddress  <= 32'd0;
             oWM_writedata     <= 32'd0;
             bytes_remaining   <= 32'd0;
-            WM_done           <= 1'b0;
+            // WM_done           <= 1'b0;
         end else begin
             current_state <= next_state;
             FF_readrequest <= 1'b0;
             //oWM_write <= 1'b0;
 
+            if (current_state == UPDATE_ADDRESS && oWM_writeaddress >= WM_startaddress + Length /* bytes_remaining <= 4 */) begin
+                WM_done <= 1'b1;
+            end else if (current_state == IDLE) begin
+                WM_done <= 1'b0;
+            end
+
             case (current_state)
                 IDLE: begin
                     oWM_write        <= 1'b0;
                     FF_readrequest   <= 1'b0;
-                    WM_done          <= 1'b0;
+                    //WM_done          <= 1'b0;
                     if (Start) begin
                         bytes_remaining  <= Length;
                         oWM_writeaddress <= WM_startaddress;
@@ -82,7 +88,10 @@ module WRITE_MASTER (
         case (current_state)
             IDLE: begin
                 if (Start && bytes_remaining > 0)
+                begin
                     next_state = CHECK_FIFO;
+                    //WM_done <= 1'b0;
+                end
                 else
                     next_state = IDLE;
             end
@@ -112,7 +121,7 @@ module WRITE_MASTER (
                     next_state = CHECK_FIFO;
                 else begin
                     next_state = IDLE;
-                    WM_done <= 1'b1;
+                    // WM_done <= 1'b1;
                 end
             end
             //default: next_state = IDLE;

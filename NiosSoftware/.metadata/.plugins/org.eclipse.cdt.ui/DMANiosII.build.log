@@ -1,0 +1,9 @@
+15:07:37 **** Incremental Build of configuration Nios II for project DMANiosII ****
+wsl make all 
+Info: Building /mnt/d/FETEL_WorkDir/Y4S2_DMA_InternReport/software/DMANiosII_bsp/
+make --no-print-directory -C /mnt/d/FETEL_WorkDir/Y4S2_DMA_InternReport/software/DMANiosII_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_DMANiosII build complete]
+
+15:07:37 Build Finished (took 497ms)
+

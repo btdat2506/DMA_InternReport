@@ -1,0 +1,66 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/FETEL_WorkDir/Y4S2_DMA_InternReport/software/DMANiosII/obj/default/runtime/sim/mentor
+T_opt
+!s110 1742283110
+V7kSVATUl]HnD_38TK[n@;0
+Z2 04 9 4 work system_tb fast 0
+=1-f89e945c1791-67d92165-28c-448c
+R0
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_003 -L rsp_demux_001 -L cmd_mux_003 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_007 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_1_s1_agent_rsp_fifo -L onchip_memory2_1_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_1_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver
+Z6 tCvgOpt 0
+n@_opt
+Z7 OL;O;2024.1;79
+R1
+T_opt1
+!s110 1742283146
+VcI8<EX;6Sjn^5508ab1MO1
+R2
+=1-f89e945c1791-67d9218a-3c-258c
+R0
+R3
+R4
+R5
+o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_003 -L rsp_demux_001 -L cmd_mux_003 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_007 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_1_s1_agent_rsp_fifo -L onchip_memory2_1_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_1_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver +acc
+R6
+n@_opt1
+R7
+R1
+vsystem_tb
+2D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v
+!s110 1742285284
+!i10b 1
+!s100 LOZ1Db25;[^WbbS[^KjZI0
+Im?b<ANY_8LPc053^Y=?5I0
+R1
+w1742284911
+8D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v
+FD:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v
+!i122 3
+L0 6 27
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2024.1;79
+r1
+!s85 0
+31
+!s108 1742285283.000000
+!s107 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v|
+!s90 -reportprogress|300|D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R6

@@ -20,21 +20,19 @@ Progress: Validating
 Progress: Done reading input file
 Info: system.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Warning: system.nios2_gen2_0: Nios II cores are not recommended for new projects and are subject to removal in a future release. Nios V cores are the recommended replacement as applicable.
-Warning: system.DMA_Controller: DMA_Controller.avalon_master must be connected to an Avalon-MM slave
-Warning: system.DMA_Controller: DMA_Controller.avalon_master_1 must be connected to an Avalon-MM slave
 Info: system: Generating system "system" for SIM_VERILOG
 Info: DMA_Controller: "system" instantiated DMA_Controller "DMA_Controller"
 Info: jtag_uart_0: Starting RTL generation for module 'system_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0032_jtag_uart_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0032_jtag_uart_0_gen//system_jtag_uart_0_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0032_jtag_uart_0_gen/}]
+Info: jtag_uart_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0003_jtag_uart_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0003_jtag_uart_0_gen//system_jtag_uart_0_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0003_jtag_uart_0_gen/}]
 Info: jtag_uart_0: Done RTL generation for module 'system_jtag_uart_0'
 Info: jtag_uart_0: "system" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: nios2_gen2_0: "system" instantiated altera_nios2_gen2 "nios2_gen2_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'system_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0033_onchip_memory2_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0033_onchip_memory2_0_gen//system_onchip_memory2_0_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0033_onchip_memory2_0_gen/}]
+Info: onchip_memory2_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0004_onchip_memory2_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0004_onchip_memory2_0_gen//system_onchip_memory2_0_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0004_onchip_memory2_0_gen/}]
 Info: onchip_memory2_0: Done RTL generation for module 'system_onchip_memory2_0'
 Info: onchip_memory2_0: "system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: onchip_memory2_1: Starting RTL generation for module 'system_onchip_memory2_1'
-Info: onchip_memory2_1:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_1 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0034_onchip_memory2_1_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0034_onchip_memory2_1_gen//system_onchip_memory2_1_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0034_onchip_memory2_1_gen/}]
+Info: onchip_memory2_1:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_1 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0005_onchip_memory2_1_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0005_onchip_memory2_1_gen//system_onchip_memory2_1_component_configuration.pl --do_build_sim=1 --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0005_onchip_memory2_1_gen/}]
 Info: onchip_memory2_1: Done RTL generation for module 'system_onchip_memory2_1'
 Info: onchip_memory2_1: "system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_1"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -46,39 +44,52 @@ Info: mm_interconnect_0: "system" instantiated altera_mm_interconnect "mm_interc
 Info: irq_mapper: "system" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "system" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'system_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=system_nios2_gen2_0_cpu --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0037_cpu_gen/ --quartus_bindir=D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0037_cpu_gen//system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0037_cpu_gen/  ]
-Info: cpu: # 2025.03.17 13:07:45 (*) Starting Nios II generation
-Info: cpu: # 2025.03.17 13:07:45 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.03.17 13:07:45 (*)   Creating all objects for CPU
-Info: cpu: # 2025.03.17 13:07:46 (*)   Creating 'C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0037_cpu_gen//system_nios2_gen2_0_cpu_nios2_waves.do'
-Info: cpu: # 2025.03.17 13:07:46 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.03.17 13:07:46 (*)   Creating plain-text RTL
-Info: cpu: # 2025.03.17 13:07:46 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=system_nios2_gen2_0_cpu --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0008_cpu_gen/ --quartus_bindir=D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0008_cpu_gen//system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0008_cpu_gen/  ]
+Info: cpu: # 2025.03.18 14:02:28 (*) Starting Nios II generation
+Info: cpu: # 2025.03.18 14:02:28 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.03.18 14:02:28 (*)   Creating all objects for CPU
+Info: cpu: # 2025.03.18 14:02:29 (*)   Creating 'C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0008_cpu_gen//system_nios2_gen2_0_cpu_nios2_waves.do'
+Info: cpu: # 2025.03.18 14:02:29 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.03.18 14:02:29 (*)   Creating plain-text RTL
+Info: cpu: # 2025.03.18 14:02:29 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'system_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
-Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"
-Info: jtag_uart_0_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_0_avalon_jtag_slave_translator"
-Info: nios2_gen2_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_gen2_0_data_master_agent"
-Info: jtag_uart_0_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_0_avalon_jtag_slave_agent"
-Info: jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo"
+Info: DMA_Controller_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "DMA_Controller_avalon_master_translator"
+Info: onchip_memory2_1_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "onchip_memory2_1_s1_translator"
+Info: DMA_Controller_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "DMA_Controller_avalon_master_agent"
+Info: onchip_memory2_1_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "onchip_memory2_1_s1_agent"
+Info: onchip_memory2_1_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "onchip_memory2_1_s1_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: DMA_Controller_avalon_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "DMA_Controller_avalon_master_limiter"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_avalon_sc_fifo.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: system: Done "system" with 29 modules, 54 files
+Info: system: Done "system" with 38 modules, 66 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
@@ -113,8 +124,6 @@ Progress: Validating
 Progress: Done reading input file
 Info: system.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Warning: system.nios2_gen2_0: Nios II cores are not recommended for new projects and are subject to removal in a future release. Nios V cores are the recommended replacement as applicable.
-Warning: system.DMA_Controller: DMA_Controller.avalon_master must be connected to an Avalon-MM slave
-Warning: system.DMA_Controller: DMA_Controller.avalon_master_1 must be connected to an Avalon-MM slave
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -140,21 +149,19 @@ Progress: Validating
 Progress: Done reading input file
 Info: system.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Warning: system.nios2_gen2_0: Nios II cores are not recommended for new projects and are subject to removal in a future release. Nios V cores are the recommended replacement as applicable.
-Warning: system.DMA_Controller: DMA_Controller.avalon_master must be connected to an Avalon-MM slave
-Warning: system.DMA_Controller: DMA_Controller.avalon_master_1 must be connected to an Avalon-MM slave
 Info: system: Generating system "system" for QUARTUS_SYNTH
 Info: DMA_Controller: "system" instantiated DMA_Controller "DMA_Controller"
 Info: jtag_uart_0: Starting RTL generation for module 'system_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0058_jtag_uart_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0058_jtag_uart_0_gen//system_jtag_uart_0_component_configuration.pl --do_build_sim=0}]
+Info: jtag_uart_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0038_jtag_uart_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0038_jtag_uart_0_gen//system_jtag_uart_0_component_configuration.pl --do_build_sim=0}]
 Info: jtag_uart_0: Done RTL generation for module 'system_jtag_uart_0'
 Info: jtag_uart_0: "system" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: nios2_gen2_0: "system" instantiated altera_nios2_gen2 "nios2_gen2_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'system_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0059_onchip_memory2_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0059_onchip_memory2_0_gen//system_onchip_memory2_0_component_configuration.pl --do_build_sim=0}]
+Info: onchip_memory2_0:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_0 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0039_onchip_memory2_0_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0039_onchip_memory2_0_gen//system_onchip_memory2_0_component_configuration.pl --do_build_sim=0}]
 Info: onchip_memory2_0: Done RTL generation for module 'system_onchip_memory2_0'
 Info: onchip_memory2_0: "system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: onchip_memory2_1: Starting RTL generation for module 'system_onchip_memory2_1'
-Info: onchip_memory2_1:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_1 --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0060_onchip_memory2_1_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0060_onchip_memory2_1_gen//system_onchip_memory2_1_component_configuration.pl --do_build_sim=0}]
+Info: onchip_memory2_1:   Generation command is [exec cmd /c {set LC_ALL=C&& D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_onchip_memory2_1 --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0040_onchip_memory2_1_gen/ --quartus_dir=D:/fetel_worksoft/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0040_onchip_memory2_1_gen//system_onchip_memory2_1_component_configuration.pl --do_build_sim=0}]
 Info: onchip_memory2_1: Done RTL generation for module 'system_onchip_memory2_1'
 Info: onchip_memory2_1: "system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_1"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -166,37 +173,50 @@ Info: mm_interconnect_0: "system" instantiated altera_mm_interconnect "mm_interc
 Info: irq_mapper: "system" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "system" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'system_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=system_nios2_gen2_0_cpu --dir=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0063_cpu_gen/ --quartus_bindir=D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0164_4018893710758687982.dir/0063_cpu_gen//system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2025.03.17 13:08:35 (*) Starting Nios II generation
-Info: cpu: # 2025.03.17 13:08:35 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2025.03.17 13:08:35 (*)   Creating all objects for CPU
-Info: cpu: # 2025.03.17 13:08:36 (*)   Generating RTL from CPU objects
-Info: cpu: # 2025.03.17 13:08:36 (*)   Creating plain-text RTL
-Info: cpu: # 2025.03.17 13:08:36 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=system_nios2_gen2_0_cpu --dir=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0043_cpu_gen/ --quartus_bindir=D:/FETEL_WorkSoft/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/btdat/AppData/Local/Temp/alt0165_1274846991443307121.dir/0043_cpu_gen//system_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2025.03.18 14:03:01 (*) Starting Nios II generation
+Info: cpu: # 2025.03.18 14:03:01 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2025.03.18 14:03:01 (*)   Creating all objects for CPU
+Info: cpu: # 2025.03.18 14:03:01 (*)   Generating RTL from CPU objects
+Info: cpu: # 2025.03.18 14:03:01 (*)   Creating plain-text RTL
+Info: cpu: # 2025.03.18 14:03:02 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'system_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
-Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"
-Info: jtag_uart_0_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_0_avalon_jtag_slave_translator"
-Info: nios2_gen2_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_gen2_0_data_master_agent"
-Info: jtag_uart_0_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_0_avalon_jtag_slave_agent"
-Info: jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo"
+Info: DMA_Controller_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "DMA_Controller_avalon_master_translator"
+Info: onchip_memory2_1_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "onchip_memory2_1_s1_translator"
+Info: DMA_Controller_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "DMA_Controller_avalon_master_agent"
+Info: onchip_memory2_1_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "onchip_memory2_1_s1_agent"
+Info: onchip_memory2_1_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "onchip_memory2_1_s1_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: DMA_Controller_avalon_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "DMA_Controller_avalon_master_limiter"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
 Info: Reusing file D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: system: Done "system" with 29 modules, 47 files
+Info: system: Done "system" with 38 modules, 59 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

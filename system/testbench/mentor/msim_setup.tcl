@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 23.1 993 win32 2025.03.17.13:06:34
+# ACDS 23.1 993 win32 2025.03.18.15:02:16
 
 # ----------------------------------------
 # Initialize variables
@@ -179,70 +179,88 @@ if ![ string match "*Intel*FPGA*" [ vsim -version ] ] {
   ensure_lib                       ./libraries/cyclonev_pcie_hip_ver/
   vmap       cyclonev_pcie_hip_ver ./libraries/cyclonev_pcie_hip_ver/
 }
-ensure_lib                                              ./libraries/altera_common_sv_packages/                   
-vmap       altera_common_sv_packages                    ./libraries/altera_common_sv_packages/                   
-ensure_lib                                              ./libraries/error_adapter_0/                             
-vmap       error_adapter_0                              ./libraries/error_adapter_0/                             
-ensure_lib                                              ./libraries/avalon_st_adapter/                           
-vmap       avalon_st_adapter                            ./libraries/avalon_st_adapter/                           
-ensure_lib                                              ./libraries/rsp_mux_001/                                 
-vmap       rsp_mux_001                                  ./libraries/rsp_mux_001/                                 
-ensure_lib                                              ./libraries/rsp_mux/                                     
-vmap       rsp_mux                                      ./libraries/rsp_mux/                                     
-ensure_lib                                              ./libraries/rsp_demux_004/                               
-vmap       rsp_demux_004                                ./libraries/rsp_demux_004/                               
-ensure_lib                                              ./libraries/rsp_demux/                                   
-vmap       rsp_demux                                    ./libraries/rsp_demux/                                   
-ensure_lib                                              ./libraries/cmd_mux_004/                                 
-vmap       cmd_mux_004                                  ./libraries/cmd_mux_004/                                 
-ensure_lib                                              ./libraries/cmd_mux/                                     
-vmap       cmd_mux                                      ./libraries/cmd_mux/                                     
-ensure_lib                                              ./libraries/cmd_demux_001/                               
-vmap       cmd_demux_001                                ./libraries/cmd_demux_001/                               
-ensure_lib                                              ./libraries/cmd_demux/                                   
-vmap       cmd_demux                                    ./libraries/cmd_demux/                                   
-ensure_lib                                              ./libraries/router_006/                                  
-vmap       router_006                                   ./libraries/router_006/                                  
-ensure_lib                                              ./libraries/router_002/                                  
-vmap       router_002                                   ./libraries/router_002/                                  
-ensure_lib                                              ./libraries/router_001/                                  
-vmap       router_001                                   ./libraries/router_001/                                  
-ensure_lib                                              ./libraries/router/                                      
-vmap       router                                       ./libraries/router/                                      
-ensure_lib                                              ./libraries/jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo/
-vmap       jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo ./libraries/jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo/
-ensure_lib                                              ./libraries/jtag_uart_0_avalon_jtag_slave_agent/         
-vmap       jtag_uart_0_avalon_jtag_slave_agent          ./libraries/jtag_uart_0_avalon_jtag_slave_agent/         
-ensure_lib                                              ./libraries/nios2_gen2_0_data_master_agent/              
-vmap       nios2_gen2_0_data_master_agent               ./libraries/nios2_gen2_0_data_master_agent/              
-ensure_lib                                              ./libraries/jtag_uart_0_avalon_jtag_slave_translator/    
-vmap       jtag_uart_0_avalon_jtag_slave_translator     ./libraries/jtag_uart_0_avalon_jtag_slave_translator/    
-ensure_lib                                              ./libraries/nios2_gen2_0_data_master_translator/         
-vmap       nios2_gen2_0_data_master_translator          ./libraries/nios2_gen2_0_data_master_translator/         
-ensure_lib                                              ./libraries/cpu/                                         
-vmap       cpu                                          ./libraries/cpu/                                         
-ensure_lib                                              ./libraries/rst_controller/                              
-vmap       rst_controller                               ./libraries/rst_controller/                              
-ensure_lib                                              ./libraries/irq_mapper/                                  
-vmap       irq_mapper                                   ./libraries/irq_mapper/                                  
-ensure_lib                                              ./libraries/mm_interconnect_0/                           
-vmap       mm_interconnect_0                            ./libraries/mm_interconnect_0/                           
-ensure_lib                                              ./libraries/onchip_memory2_1/                            
-vmap       onchip_memory2_1                             ./libraries/onchip_memory2_1/                            
-ensure_lib                                              ./libraries/onchip_memory2_0/                            
-vmap       onchip_memory2_0                             ./libraries/onchip_memory2_0/                            
-ensure_lib                                              ./libraries/nios2_gen2_0/                                
-vmap       nios2_gen2_0                                 ./libraries/nios2_gen2_0/                                
-ensure_lib                                              ./libraries/jtag_uart_0/                                 
-vmap       jtag_uart_0                                  ./libraries/jtag_uart_0/                                 
-ensure_lib                                              ./libraries/DMA_Controller/                              
-vmap       DMA_Controller                               ./libraries/DMA_Controller/                              
-ensure_lib                                              ./libraries/system_inst_reset_bfm/                       
-vmap       system_inst_reset_bfm                        ./libraries/system_inst_reset_bfm/                       
-ensure_lib                                              ./libraries/system_inst_clk_bfm/                         
-vmap       system_inst_clk_bfm                          ./libraries/system_inst_clk_bfm/                         
-ensure_lib                                              ./libraries/system_inst/                                 
-vmap       system_inst                                  ./libraries/system_inst/                                 
+ensure_lib                                         ./libraries/altera_common_sv_packages/              
+vmap       altera_common_sv_packages               ./libraries/altera_common_sv_packages/              
+ensure_lib                                         ./libraries/error_adapter_0/                        
+vmap       error_adapter_0                         ./libraries/error_adapter_0/                        
+ensure_lib                                         ./libraries/avalon_st_adapter/                      
+vmap       avalon_st_adapter                       ./libraries/avalon_st_adapter/                      
+ensure_lib                                         ./libraries/rsp_mux_003/                            
+vmap       rsp_mux_003                             ./libraries/rsp_mux_003/                            
+ensure_lib                                         ./libraries/rsp_mux_002/                            
+vmap       rsp_mux_002                             ./libraries/rsp_mux_002/                            
+ensure_lib                                         ./libraries/rsp_mux/                                
+vmap       rsp_mux                                 ./libraries/rsp_mux/                                
+ensure_lib                                         ./libraries/rsp_demux_003/                          
+vmap       rsp_demux_003                           ./libraries/rsp_demux_003/                          
+ensure_lib                                         ./libraries/rsp_demux_001/                          
+vmap       rsp_demux_001                           ./libraries/rsp_demux_001/                          
+ensure_lib                                         ./libraries/cmd_mux_003/                            
+vmap       cmd_mux_003                             ./libraries/cmd_mux_003/                            
+ensure_lib                                         ./libraries/cmd_mux_002/                            
+vmap       cmd_mux_002                             ./libraries/cmd_mux_002/                            
+ensure_lib                                         ./libraries/cmd_mux_001/                            
+vmap       cmd_mux_001                             ./libraries/cmd_mux_001/                            
+ensure_lib                                         ./libraries/cmd_mux/                                
+vmap       cmd_mux                                 ./libraries/cmd_mux/                                
+ensure_lib                                         ./libraries/cmd_demux_003/                          
+vmap       cmd_demux_003                           ./libraries/cmd_demux_003/                          
+ensure_lib                                         ./libraries/cmd_demux_002/                          
+vmap       cmd_demux_002                           ./libraries/cmd_demux_002/                          
+ensure_lib                                         ./libraries/cmd_demux_001/                          
+vmap       cmd_demux_001                           ./libraries/cmd_demux_001/                          
+ensure_lib                                         ./libraries/cmd_demux/                              
+vmap       cmd_demux                               ./libraries/cmd_demux/                              
+ensure_lib                                         ./libraries/DMA_Controller_avalon_master_limiter/   
+vmap       DMA_Controller_avalon_master_limiter    ./libraries/DMA_Controller_avalon_master_limiter/   
+ensure_lib                                         ./libraries/router_007/                             
+vmap       router_007                              ./libraries/router_007/                             
+ensure_lib                                         ./libraries/router_006/                             
+vmap       router_006                              ./libraries/router_006/                             
+ensure_lib                                         ./libraries/router_005/                             
+vmap       router_005                              ./libraries/router_005/                             
+ensure_lib                                         ./libraries/router_004/                             
+vmap       router_004                              ./libraries/router_004/                             
+ensure_lib                                         ./libraries/router_003/                             
+vmap       router_003                              ./libraries/router_003/                             
+ensure_lib                                         ./libraries/router_002/                             
+vmap       router_002                              ./libraries/router_002/                             
+ensure_lib                                         ./libraries/router/                                 
+vmap       router                                  ./libraries/router/                                 
+ensure_lib                                         ./libraries/onchip_memory2_1_s1_agent_rsp_fifo/     
+vmap       onchip_memory2_1_s1_agent_rsp_fifo      ./libraries/onchip_memory2_1_s1_agent_rsp_fifo/     
+ensure_lib                                         ./libraries/onchip_memory2_1_s1_agent/              
+vmap       onchip_memory2_1_s1_agent               ./libraries/onchip_memory2_1_s1_agent/              
+ensure_lib                                         ./libraries/DMA_Controller_avalon_master_agent/     
+vmap       DMA_Controller_avalon_master_agent      ./libraries/DMA_Controller_avalon_master_agent/     
+ensure_lib                                         ./libraries/onchip_memory2_1_s1_translator/         
+vmap       onchip_memory2_1_s1_translator          ./libraries/onchip_memory2_1_s1_translator/         
+ensure_lib                                         ./libraries/DMA_Controller_avalon_master_translator/
+vmap       DMA_Controller_avalon_master_translator ./libraries/DMA_Controller_avalon_master_translator/
+ensure_lib                                         ./libraries/cpu/                                    
+vmap       cpu                                     ./libraries/cpu/                                    
+ensure_lib                                         ./libraries/rst_controller/                         
+vmap       rst_controller                          ./libraries/rst_controller/                         
+ensure_lib                                         ./libraries/irq_mapper/                             
+vmap       irq_mapper                              ./libraries/irq_mapper/                             
+ensure_lib                                         ./libraries/mm_interconnect_0/                      
+vmap       mm_interconnect_0                       ./libraries/mm_interconnect_0/                      
+ensure_lib                                         ./libraries/onchip_memory2_1/                       
+vmap       onchip_memory2_1                        ./libraries/onchip_memory2_1/                       
+ensure_lib                                         ./libraries/onchip_memory2_0/                       
+vmap       onchip_memory2_0                        ./libraries/onchip_memory2_0/                       
+ensure_lib                                         ./libraries/nios2_gen2_0/                           
+vmap       nios2_gen2_0                            ./libraries/nios2_gen2_0/                           
+ensure_lib                                         ./libraries/jtag_uart_0/                            
+vmap       jtag_uart_0                             ./libraries/jtag_uart_0/                            
+ensure_lib                                         ./libraries/DMA_Controller/                         
+vmap       DMA_Controller                          ./libraries/DMA_Controller/                         
+ensure_lib                                         ./libraries/system_inst_reset_bfm/                  
+vmap       system_inst_reset_bfm                   ./libraries/system_inst_reset_bfm/                  
+ensure_lib                                         ./libraries/system_inst_clk_bfm/                    
+vmap       system_inst_clk_bfm                     ./libraries/system_inst_clk_bfm/                    
+ensure_lib                                         ./libraries/system_inst/                            
+vmap       system_inst                             ./libraries/system_inst/                            
 
 # ----------------------------------------
 # Compile device library files
@@ -268,67 +286,82 @@ alias dev_com {
 # Compile the design files in correct order
 alias com {
   echo "\[exec\] com"
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/verbosity_pkg.sv"                                                                           -work altera_common_sv_packages                   
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -L altera_common_sv_packages -work error_adapter_0                             
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter.v"                                               -work avalon_st_adapter                           
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_001.sv"                       -L altera_common_sv_packages -work rsp_mux_001                                 
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work rsp_mux_001                                 
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux.sv"                           -L altera_common_sv_packages -work rsp_mux                                     
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work rsp_mux                                     
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_004.sv"                     -L altera_common_sv_packages -work rsp_demux_004                               
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux.sv"                         -L altera_common_sv_packages -work rsp_demux                                   
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_004.sv"                       -L altera_common_sv_packages -work cmd_mux_004                                 
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux_004                                 
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux.sv"                           -L altera_common_sv_packages -work cmd_mux                                     
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux                                     
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_001.sv"                     -L altera_common_sv_packages -work cmd_demux_001                               
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux.sv"                         -L altera_common_sv_packages -work cmd_demux                                   
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_006.sv"                        -L altera_common_sv_packages -work router_006                                  
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_002.sv"                        -L altera_common_sv_packages -work router_002                                  
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_001.sv"                        -L altera_common_sv_packages -work router_001                                  
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router.sv"                            -L altera_common_sv_packages -work router                                      
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                                                    -work jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                  -L altera_common_sv_packages -work jtag_uart_0_avalon_jtag_slave_agent         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                           -L altera_common_sv_packages -work jtag_uart_0_avalon_jtag_slave_agent         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_master_agent.sv"                                 -L altera_common_sv_packages -work nios2_gen2_0_data_master_agent              
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_slave_translator.sv"                             -L altera_common_sv_packages -work jtag_uart_0_avalon_jtag_slave_translator    
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_master_translator.sv"                            -L altera_common_sv_packages -work nios2_gen2_0_data_master_translator         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v"                                                                  -work cpu                                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_sysclk.v"                                               -work cpu                                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_tck.v"                                                  -work cpu                                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_wrapper.v"                                              -work cpu                                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_test_bench.v"                                                       -work cpu                                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_reset_controller.v"                                                                  -work rst_controller                              
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_reset_synchronizer.v"                                                                -work rst_controller                              
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_irq_mapper.sv"                                          -L altera_common_sv_packages -work irq_mapper                                  
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0.v"                                                                 -work mm_interconnect_0                           
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_onchip_memory2_1.v"                                                                  -work onchip_memory2_1                            
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_onchip_memory2_0.v"                                                                  -work onchip_memory2_0                            
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0.v"                                                                      -work nios2_gen2_0                                
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_jtag_uart_0.v"                                                                       -work jtag_uart_0                                 
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/CONTROL_SLAVE.v"                                                                            -work DMA_Controller                              
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/DMAController.v"                                                                            -work DMA_Controller                              
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/FIFO.v"                                                                                     -work DMA_Controller                              
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/READ_MASTER.v"                                                                              -work DMA_Controller                              
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/WRITE_MASTER.v"                                                                             -work DMA_Controller                              
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                 -L altera_common_sv_packages -work system_inst_reset_bfm                       
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                 -L altera_common_sv_packages -work system_inst_clk_bfm                         
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system.v"                                                                                   -work system_inst                                 
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/system_tb.v"                                                                                                                                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/verbosity_pkg.sv"                                                                           -work altera_common_sv_packages              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -L altera_common_sv_packages -work error_adapter_0                        
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter.v"                                               -work avalon_st_adapter                      
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_003.sv"                       -L altera_common_sv_packages -work rsp_mux_003                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work rsp_mux_003                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_002.sv"                       -L altera_common_sv_packages -work rsp_mux_002                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work rsp_mux_002                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux.sv"                           -L altera_common_sv_packages -work rsp_mux                                
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work rsp_mux                                
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_003.sv"                     -L altera_common_sv_packages -work rsp_demux_003                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_001.sv"                     -L altera_common_sv_packages -work rsp_demux_001                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_003.sv"                       -L altera_common_sv_packages -work cmd_mux_003                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux_003                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_002.sv"                       -L altera_common_sv_packages -work cmd_mux_002                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux_002                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_001.sv"                       -L altera_common_sv_packages -work cmd_mux_001                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux_001                            
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux.sv"                           -L altera_common_sv_packages -work cmd_mux                                
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                   -L altera_common_sv_packages -work cmd_mux                                
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_003.sv"                     -L altera_common_sv_packages -work cmd_demux_003                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_002.sv"                     -L altera_common_sv_packages -work cmd_demux_002                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_001.sv"                     -L altera_common_sv_packages -work cmd_demux_001                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux.sv"                         -L altera_common_sv_packages -work cmd_demux                              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv"                              -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter   
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_reorder_memory.sv"                               -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter   
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                       -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter   
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v"                              -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter   
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_007.sv"                        -L altera_common_sv_packages -work router_007                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_006.sv"                        -L altera_common_sv_packages -work router_006                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_005.sv"                        -L altera_common_sv_packages -work router_005                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_004.sv"                        -L altera_common_sv_packages -work router_004                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_003.sv"                        -L altera_common_sv_packages -work router_003                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router_002.sv"                        -L altera_common_sv_packages -work router_002                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0_router.sv"                            -L altera_common_sv_packages -work router                                 
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                                                    -work onchip_memory2_1_s1_agent_rsp_fifo     
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                  -L altera_common_sv_packages -work onchip_memory2_1_s1_agent              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                           -L altera_common_sv_packages -work onchip_memory2_1_s1_agent              
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_master_agent.sv"                                 -L altera_common_sv_packages -work DMA_Controller_avalon_master_agent     
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_slave_translator.sv"                             -L altera_common_sv_packages -work onchip_memory2_1_s1_translator         
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_merlin_master_translator.sv"                            -L altera_common_sv_packages -work DMA_Controller_avalon_master_translator
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v"                                                                  -work cpu                                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_sysclk.v"                                               -work cpu                                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_tck.v"                                                  -work cpu                                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_wrapper.v"                                              -work cpu                                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_test_bench.v"                                                       -work cpu                                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_reset_controller.v"                                                                  -work rst_controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_reset_synchronizer.v"                                                                -work rst_controller                         
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/system_irq_mapper.sv"                                          -L altera_common_sv_packages -work irq_mapper                             
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0.v"                                                                 -work mm_interconnect_0                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_onchip_memory2_1.v"                                                                  -work onchip_memory2_1                       
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_onchip_memory2_0.v"                                                                  -work onchip_memory2_0                       
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_nios2_gen2_0.v"                                                                      -work nios2_gen2_0                           
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_jtag_uart_0.v"                                                                       -work jtag_uart_0                            
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/CONTROL_SLAVE.v"                                                                            -work DMA_Controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/DMAController.v"                                                                            -work DMA_Controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/READ_MASTER.v"                                                                              -work DMA_Controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/WRITE_MASTER.v"                                                                             -work DMA_Controller                         
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/FIFO_IP.v"                                                                                  -work DMA_Controller                         
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                 -L altera_common_sv_packages -work system_inst_reset_bfm                  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                 -L altera_common_sv_packages -work system_inst_clk_bfm                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system.v"                                                                                   -work system_inst                            
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/system_tb.v"                                                                                                                                        
 }
 
 # ----------------------------------------
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_004 -L rsp_demux -L cmd_mux_004 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_006 -L router_002 -L router_001 -L router -L jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo -L jtag_uart_0_avalon_jtag_slave_agent -L nios2_gen2_0_data_master_agent -L jtag_uart_0_avalon_jtag_slave_translator -L nios2_gen2_0_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_003 -L rsp_demux_001 -L cmd_mux_003 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_007 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_1_s1_agent_rsp_fifo -L onchip_memory2_1_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_1_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -voptargs=+acc option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_004 -L rsp_demux -L cmd_mux_004 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_006 -L router_002 -L router_001 -L router -L jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo -L jtag_uart_0_avalon_jtag_slave_agent -L nios2_gen2_0_data_master_agent -L jtag_uart_0_avalon_jtag_slave_translator -L nios2_gen2_0_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_003 -L rsp_demux_001 -L cmd_mux_003 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_007 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_1_s1_agent_rsp_fifo -L onchip_memory2_1_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_1_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

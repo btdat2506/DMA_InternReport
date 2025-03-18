@@ -1,0 +1,6 @@
+16:01:06 **** Clean-only build of configuration Nios II for project DMANiosII_bsp ****
+wsl make clean 
+[BSP clean complete]
+
+16:01:07 Build Finished (took 445ms)
+

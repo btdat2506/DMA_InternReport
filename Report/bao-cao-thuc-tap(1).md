@@ -6,7 +6,7 @@ CESLAB (Computer Embedded Systems Laboratory) là phòng thí nghiệm trực th
 
 CESLAB được thành lập với mục tiêu trở thành một trung tâm hàng đầu trong nghiên cứu, phát triển và đào tạo về hệ thống nhúng tại Việt Nam. Phòng thí nghiệm đóng vai trò quan trọng trong việc kết nối giữa lý thuyết học thuật và ứng dụng thực tiễn, đồng thời là nơi đào tạo nguồn nhân lực chất lượng cao trong lĩnh vực điện tử và hệ thống nhúng.
 
-Khoa Điện tử - Viễn thông (FETEL) của Trường Đại học Khoa học Tự nhiên là một trong những khoa đào tạo hàng đầu về lĩnh vực điện tử, viễn thông và công nghệ thông tin tại Việt Nam. Khoa có lịch sử phát triển lâu dài và được trang bị cơ sở vật chất hiện đại, đáp ứng nhu cầu đào tạo và nghiên cứu. Với đội ngũ giảng viên có trình độ chuyên môn cao và kinh nghiệm thực tiễn풃 FETEL không ngừng đổi mới chương trình đào tạo, nâng cao chất lượng giảng dạy và nghiên cứu khoa học.
+Khoa Điện tử - Viễn thông (FETEL) của Trường Đại học Khoa học Tự nhiên là một trong những khoa đào tạo hàng đầu về lĩnh vực điện tử, viễn thông và công nghệ thông tin tại Việt Nam. Khoa có lịch sử phát triển lâu dài và được trang bị cơ sở vật chất hiện đại, đáp ứng nhu cầu đào tạo và nghiên cứu. Với đội ngũ giảng viên có trình độ chuyên môn cao và kinh nghiệm thực tiễn FETEL không ngừng đổi mới chương trình đào tạo, nâng cao chất lượng giảng dạy và nghiên cứu khoa học.
 
 CESLAB tập trung vào các lĩnh vực chính như:
 - Nghiên cứu và phát triển các hệ thống nhúng
