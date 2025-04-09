@@ -1,0 +1,312 @@
+/*
+ * "Hello World" example.
+ *
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
+ * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
+ * device in your system's hardware.
+ * The memory footprint of this hosted application is ~69 kbytes by default
+ * using the standard reference design.
+ *
+ * For a reduced footprint version of this template, and an explanation of how
+ * to reduce the memory footprint for a given application, see the
+ * "small_hello_world" template.
+ *
+ */
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "system.h"        // System-specific definitions
+#include "io.h"            // I/O functions (if needed)
+#include "sys/alt_cache.h" // <<< Cache management functions
+#include "alt_types.h"     // <<< For alt_u32
+
+// Register Offsets (in bytes relative to DMA_CONTROLLER_BASE)
+// IMPORTANT: These should match your hardware register map.
+// Your Verilog uses address lines [2:0], implying byte offsets.
+// Assuming word-aligned registers for IOWR/IORD access:
+#define DMA_REG_READADDRESS 0  // Offset 0 (Byte Address 0x00)
+#define DMA_REG_WRITEADDRESS 1 // Offset 1 (Byte Address 0x04)
+#define DMA_REG_LENGTH 2       // Offset 2 (Byte Address 0x08)
+// Offset 3 is unused
+#define DMA_REG_CONTROL 4 // Offset 4 (Byte Address 0x10)
+#define DMA_REG_STATUS 5  // Offset 5 (Byte Address 0x14)
+
+// Control Register Bits
+#define DMA_CONTROL_GO (1 << 0)
+
+// Status Register Bits
+#define DMA_STATUS_DONE (1 << 0)
+#define DMA_STATUS_BUSY (1 << 1)
+
+// Reset Timeout (number of status polls)
+#define DMA_RESET_TIMEOUT 10000
+
+// Buffer size
+#define BUFFER_SIZE 32
+
+#define arg_simulation 0 // Set to 0 for simulation, 1 for hardware
+
+// Source data buffer (likely placed in onchip_memory2_0 by linker)
+// Initialized with values 2 to 33
+alt_u32 pdata0[BUFFER_SIZE] = {
+    2, 3, 4, 5, 6, 7, 8, 9,
+    10, 11, 12, 13, 14, 15, 16, 17,
+    18, 19, 20, 21, 22, 23, 24, 25,
+    26, 27, 28, 29, 30, 31, 32, 33};
+
+// Destination data buffer pointer - explicitly placed in onchip_memory2_1
+// Adding an offset within the memory for clarity/safety
+alt_u32 *pdata1 = (alt_u32 *)(ONCHIP_MEMORY2_1_BASE + 0x100); // Offset 0x100 within mem 1
+
+// Write to DMA register (using word offset for IOWR)
+static inline void dma_write_reg(alt_u32 reg_offset, alt_u32 value)
+{
+    IOWR(DMA_CONTROLLER_BASE, reg_offset, value);
+}
+
+// Read from DMA register (using word offset for IORD)
+static inline alt_u32 dma_read_reg(alt_u32 reg_offset)
+{
+    return IORD(DMA_CONTROLLER_BASE, reg_offset);
+}
+
+// --- NEW FUNCTION: Reset DMA Controller ---
+// Attempts to reset the DMA state via software writes
+bool reset_dma()
+{
+    printf("Resetting DMA Controller...\n");
+
+    // 1. Clear the GO bit in the Control Register to stop new transfers
+    printf("  Clearing GO bit (Reg %d)...\n", DMA_REG_CONTROL);
+    dma_write_reg(DMA_REG_CONTROL, 0);
+
+    // 2. Clear configuration registers
+    printf("  Clearing Address/Length Regs (%d, %d, %d)...\n",
+           DMA_REG_READADDRESS, DMA_REG_WRITEADDRESS, DMA_REG_LENGTH);
+    dma_write_reg(DMA_REG_READADDRESS, 0);
+    dma_write_reg(DMA_REG_WRITEADDRESS, 0);
+    dma_write_reg(DMA_REG_LENGTH, 0);
+
+    // 3. Clear the DONE status bit (Write-1-to-clear)
+    // Check if DONE is already set before clearing
+    if (dma_read_reg(DMA_REG_STATUS) & DMA_STATUS_DONE)
+    {
+        printf("  Clearing DONE status bit (Reg %d)...\n", DMA_REG_STATUS);
+        dma_write_reg(DMA_REG_STATUS, DMA_STATUS_DONE); // Write 1 to DONE bit
+    }
+
+    // 4. Wait for the BUSY flag to clear (optional but recommended)
+    printf("  Waiting for BUSY bit to clear (Reg %d)...\n", DMA_REG_STATUS);
+    int timeout = DMA_RESET_TIMEOUT;
+    while ((dma_read_reg(DMA_REG_STATUS) & DMA_STATUS_BUSY) && (timeout > 0))
+    {
+        timeout--;
+        // Optional delay
+        // for(volatile int d=0; d<10; d++);
+    }
+
+    if (timeout == 0)
+    {
+        printf("  Error: DMA reset timeout - BUSY bit did not clear!\n");
+        return false;
+    }
+
+    printf("DMA Reset complete. Final Status: 0x%lx\n", dma_read_reg(DMA_REG_STATUS));
+    return true;
+}
+// --- End of reset_dma function ---
+
+// Start DMA transfer
+void start_dma_transfer(alt_u32 src_addr, alt_u32 dst_addr, alt_u32 length_bytes)
+{
+    printf("Configuring DMA Regs:\n");
+    printf("  Reg %d (Read Addr) : 0x%08lx\n", DMA_REG_READADDRESS, src_addr);
+    printf("  Reg %d (Write Addr): 0x%08lx\n", DMA_REG_WRITEADDRESS, dst_addr);
+    printf("  Reg %d (Length)    : %lu bytes\n", DMA_REG_LENGTH, length_bytes);
+    printf("  Reg %d (Control)   : 0x%08X\n", DMA_REG_CONTROL, (alt_u32)DMA_CONTROL_GO);
+
+    // Write the source and destination addresses
+    dma_write_reg(DMA_REG_READADDRESS, src_addr);
+    dma_write_reg(DMA_REG_WRITEADDRESS, dst_addr);
+
+    // Write the length (number of bytes to transfer)
+    dma_write_reg(DMA_REG_LENGTH, length_bytes);
+
+    // Optional: Clear DONE bit in status register (Write-1-to-clear mechanism if implemented)
+    // Check your CONTROL_SLAVE Verilog for address 5 write behavior
+    // Assuming bit 0 of status reg is DONE, and writing 1 clears it:
+    // dma_write_reg(DMA_REG_STATUS, DMA_STATUS_DONE); // This might be better placed in reset or just before GO
+
+    // Set the GO bit to start DMA
+    dma_write_reg(DMA_REG_CONTROL, DMA_CONTROL_GO);
+    printf("DMA GO bit set.\n");
+}
+
+// Wait for DMA to complete
+bool wait_for_dma_done()
+{
+    alt_u32 status;
+    printf("Polling DMA Status (Reg %d)...\n", DMA_REG_STATUS);
+    // Add a timeout to prevent infinite loops
+    int timeout = 1000000; // Adjust as needed
+    while (timeout > 0)
+    {
+        status = dma_read_reg(DMA_REG_STATUS);
+        // printf("Status: 0x%08lx\n", status); // Debug print
+        if (status & DMA_STATUS_DONE)
+        {
+            printf("DMA DONE bit detected.\n");
+            // Optional: Clear the DONE bit after detecting it by writing 1 to it
+            // dma_write_reg(DMA_REG_STATUS, DMA_STATUS_DONE);
+            return true;
+        }
+        // Check if BUSY is low but DONE is not set - indicates potential HW issue
+        // Note: BUSY might drop *slightly* before DONE is set in HW depending on logic.
+        // A more robust check might involve waiting a few cycles after BUSY drops.
+        // if (!(status & DMA_STATUS_BUSY)) {
+        //      // If BUSY drops but DONE never set, indicates an error
+        //      alt_u32 final_status = dma_read_reg(DMA_REG_STATUS); // Read again
+        //      if (!(final_status & DMA_STATUS_DONE)) {
+        //           printf("Error: DMA BUSY dropped but DONE never set. Status: 0x%lx\n", final_status);
+        //           return false;
+        //      } else {
+        //           // DONE was set just after BUSY dropped
+        //           printf("DMA DONE bit detected (just after BUSY cleared).\n");
+        //           return true;
+        //      }
+        // }
+        timeout--;
+        // Add a small delay or yield if in an RTOS environment
+        // for(volatile int d=0; d<100; d++); // Simple delay
+    }
+    printf("Error: Timeout waiting for DMA DONE bit. Final Status: 0x%lx\n", status);
+    return false;
+}
+
+// Verify DMA transfer
+bool verify_dma_transfer(alt_u32 *src, alt_u32 *dst, alt_u32 num_words)
+{
+    bool success = true;
+    printf("Verifying %lu words...\n", num_words);
+    for (int i = 0; i < num_words; i++)
+    {
+        // Use volatile pointers for reading destination to bypass cache optimization if needed,
+        // although cache flush is the proper method.
+        volatile alt_u32 read_data = dst[i];
+        if (read_data != src[i])
+        {
+            printf("Mismatch at index %d: expected 0x%08lX, got 0x%08lX\n",
+                   i, (alt_u32)src[i], (alt_u32)read_data);
+            success = false;
+            // return false; // Optionally exit on first mismatch
+        }
+    }
+    return success;
+}
+
+int main()
+{
+    alt_u32 src_address = (alt_u32)pdata0;
+    alt_u32 dst_address = (alt_u32)pdata1;
+
+    // Transfer size in bytes
+    alt_u32 length_bytes = BUFFER_SIZE * sizeof(alt_u32);
+
+    if (arg_simulation)
+    {
+        printf("==========================================\n");
+        printf("= Nios II DMA Example =\n");
+        // --- Reset DMA at the start ---
+        if (!reset_dma())
+        {
+            printf("DMA failed to reset. Halting.\n");
+            return -1;
+        }
+        // --- DMA should be idle now ---
+    
+        // Ensure source data is flushed from cache *before* DMA reads it
+        // (Good practice, though less critical if source isn't modified)
+        alt_dcache_flush((void *)pdata0, sizeof(pdata0));
+    
+        printf("\nSystem Base Addresses:\n");
+        printf("  ONCHIP_MEMORY2_0_BASE: 0x%08lx\n", (alt_u32)ONCHIP_MEMORY2_0_BASE);
+        printf("  ONCHIP_MEMORY2_1_BASE: 0x%08lx\n", (alt_u32)ONCHIP_MEMORY2_1_BASE);
+        printf("  DMA_CONTROLLER_BASE:   0x%08lx\n", (alt_u32)DMA_CONTROLLER_BASE);
+        printf("Actual pdata0 address: %p\n", pdata0); // Verify source location
+        printf("Actual pdata1 address: %p\n", pdata1); // Verify destination location
+    
+        // Check if DMA is busy before starting a new transfer (shouldn't be after reset)
+        if (dma_read_reg(DMA_REG_STATUS) & DMA_STATUS_BUSY)
+        {
+            printf("Error: DMA is busy even after reset! Status: 0x%lx\n", dma_read_reg(DMA_REG_STATUS));
+            return -1;
+        }
+    
+        // Start DMA transfer
+        printf("\nStarting DMA transfer...\n");
+        printf("Source Address: 0x%08lx (pdata0)\n", src_address);
+        printf("Destination Address: 0x%08lx (pdata1)\n", dst_address);
+        printf("Length: %lu bytes (%d words)\n", length_bytes, BUFFER_SIZE);
+    
+        // Print destination buffer content *before* clearing and transfer
+        // Note: This read might be from cache if previously accessed
+        printf("\nDestination Buffer Before Clearing (potentially cached):\n");
+        for (int i = 0; i < BUFFER_SIZE; i++)
+        {
+            printf("  index %2d: 0x%08lx\n", i, (alt_u32)pdata1[i]);
+            if ((i + 1) % 8 == 0)
+                printf("\n"); // Formatting
+        }
+    
+        // Reset the destination buffer using CPU writes
+        printf("\nResetting destination buffer via CPU...\n");
+        for (int i = 0; i < BUFFER_SIZE; i++)
+        {
+            pdata1[i] = 0;
+        }
+        // Flush the cache *after* CPU writes zeros to ensure zeros are in memory
+        alt_dcache_flush((void *)dst_address, length_bytes);
+        printf("Destination buffer cleared and cache flushed.\n");
+    
+        // Optional: Read back immediately after flush to confirm zeros
+        printf("\nDestination Buffer After Reset & Flush (read back):\n");
+        for (int i = 0; i < BUFFER_SIZE; i++)
+        {
+            printf("  index %2d: 0x%08lx\n", i, (alt_u32)pdata1[i]);
+            if ((i + 1) % 8 == 0)
+                printf("\n"); // Formatting
+        }
+    }
+
+    // Start the actual DMA
+    start_dma_transfer(src_address, dst_address, length_bytes);
+
+    // Wait for DMA to complete
+    if (!wait_for_dma_done())
+    {
+        printf("DMA transfer failed or timed out!\n");
+        // Optional: Attempt another reset here?
+        // reset_dma();
+        return -1;
+    }
+
+    // !!! Crucial: Flush cache for destination region BEFORE verification !!!
+    printf("\nFlushing D-Cache for destination buffer...\n");
+    alt_dcache_flush((void *)dst_address, length_bytes);
+    printf("D-Cache flushed.\n");
+
+    // Verify DMA transfer by reading memory (now hopefully coherent)
+    printf("\nVerifying DMA transfer...\n");
+    if (verify_dma_transfer(pdata0, pdata1, BUFFER_SIZE))
+    {
+        printf("DMA Transfer Verification Successful!\n");
+    }
+    else
+    {
+        printf("DMA Transfer Verification Failed!\n");
+    }
+
+    return 0;
+}

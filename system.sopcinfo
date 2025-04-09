@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system" kind="system" version="1.0" fabric="QSYS">
  <!-- Format version 23.1 993 (Future versions may contain additional information.) -->
- <!-- 2025.03.18.15:01:39 -->
+ <!-- 2025.04.09.11:27:47 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1742284899</value>
+  <value>1744172867</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -873,18 +873,18 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>onchip_memory2_1</moduleName>
-    <slaveName>s1</slaveName>
-    <name>onchip_memory2_1.s1</name>
-    <baseAddress>131072</baseAddress>
-    <span>131072</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
     <moduleName>onchip_memory2_0</moduleName>
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
     <baseAddress>0</baseAddress>
+    <span>131072</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>onchip_memory2_1</moduleName>
+    <slaveName>s1</slaveName>
+    <name>onchip_memory2_1.s1</name>
+    <baseAddress>131072</baseAddress>
     <span>131072</span>
    </memoryBlock>
   </interface>
@@ -1173,6 +1173,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>write</role>
+   </port>
+   <port>
+    <name>oWM_byteenable</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>byteenable</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -7238,57 +7244,6 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <connection
-   name="DMA_Controller.avalon_master/onchip_memory2_1.s1"
-   kind="avalon"
-   version="23.1"
-   start="DMA_Controller.avalon_master"
-   end="onchip_memory2_1.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x00020000</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>DMA_Controller</startModule>
-  <startConnectionPoint>avalon_master</startConnectionPoint>
-  <endModule>onchip_memory2_1</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
    name="DMA_Controller.avalon_master/onchip_memory2_0.s1"
    kind="avalon"
    version="23.1"
@@ -7337,6 +7292,57 @@ parameters are a RESULT of the module parameters. -->
   <startModule>DMA_Controller</startModule>
   <startConnectionPoint>avalon_master</startConnectionPoint>
   <endModule>onchip_memory2_0</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="DMA_Controller.avalon_master/onchip_memory2_1.s1"
+   kind="avalon"
+   version="23.1"
+   start="DMA_Controller.avalon_master"
+   end="onchip_memory2_1.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x00020000</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>DMA_Controller</startModule>
+  <startConnectionPoint>avalon_master</startConnectionPoint>
+  <endModule>onchip_memory2_1</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection

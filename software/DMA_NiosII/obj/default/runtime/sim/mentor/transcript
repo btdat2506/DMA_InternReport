@@ -1,0 +1,2165 @@
+# Reading pref.tcl
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do load_sim.tcl
+# obj/default/runtime/sim
+# [exec] file_copy
+# List Of Command Line Aliases
+# 
+# file_copy                                         -- Copy ROM/RAM files to simulation directory
+# 
+# dev_com                                           -- Compile device library files
+# 
+# com                                               -- Compile the design files in correct order
+# 
+# elab                                              -- Elaborate top level design
+# 
+# elab_debug                                        -- Elaborate the top level design with -voptargs=+acc option
+# 
+# ld                                                -- Compile all the design files and elaborate the top level design
+# 
+# ld_debug                                          -- Compile all the design files and elaborate the top level design with -voptargs=+acc
+# 
+# 
+# 
+# List Of Variables
+# 
+# TOP_LEVEL_NAME                                    -- Top level module name.
+#                                                      For most designs, this should be overridden
+#                                                      to enable the elab/elab_debug aliases.
+# 
+# SYSTEM_INSTANCE_NAME                              -- Instantiated system module name inside top level module.
+# 
+# QSYS_SIMDIR                                       -- Platform Designer base simulation directory.
+# 
+# QUARTUS_INSTALL_DIR                               -- Quartus installation directory.
+# 
+# USER_DEFINED_COMPILE_OPTIONS                      -- User-defined compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_ELAB_OPTIONS                         -- User-defined elaboration options, added to elab/elab_debug aliases.
+# 
+# USER_DEFINED_VHDL_COMPILE_OPTIONS                 -- User-defined vhdl compile options, added to com/dev_com aliases.
+# 
+# USER_DEFINED_VERILOG_COMPILE_OPTIONS              -- User-defined verilog compile options, added to com/dev_com aliases.
+#  ld
+# [exec] dev_com
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:01:59 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/altera_primitives.v -work altera_ver 
+# -- Compiling module global
+# -- Compiling module carry
+# -- Compiling module cascade
+# -- Compiling module carry_sum
+# -- Compiling module exp
+# -- Compiling module soft
+# -- Compiling module opndrn
+# -- Compiling module row_global
+# -- Compiling module TRI
+# -- Compiling module lut_input
+# -- Compiling module lut_output
+# -- Compiling module latch
+# -- Compiling module dlatch
+# -- Compiling module prim_gdff
+# -- Compiling module dff
+# -- Compiling module dffe
+# -- Compiling module dffea
+# -- Compiling module dffeas
+# -- Compiling module dffeas_pr
+# -- Compiling module prim_gtff
+# -- Compiling module tff
+# -- Compiling module tffe
+# -- Compiling module prim_gjkff
+# -- Compiling module jkff
+# -- Compiling module jkffe
+# -- Compiling module prim_gsrff
+# -- Compiling module srff
+# -- Compiling module srffe
+# -- Compiling module clklock
+# -- Compiling module alt_inbuf
+# -- Compiling module alt_outbuf
+# -- Compiling module alt_outbuf_tri
+# -- Compiling module alt_iobuf
+# -- Compiling module alt_inbuf_diff
+# -- Compiling module alt_outbuf_diff
+# -- Compiling module alt_outbuf_tri_diff
+# -- Compiling module alt_iobuf_diff
+# -- Compiling module alt_bidir_diff
+# -- Compiling module alt_bidir_buf
+# -- Compiling UDP PRIM_GDFF_LOW
+# -- Compiling UDP PRIM_GDFF_LOW_SCLR_PRIORITY
+# -- Compiling UDP PRIM_GDFF_HIGH
+# -- Compiling UDP PRIM_GDFF_HIGH_SCLR_PRIORITY
+# 
+# Top level modules:
+# 	global
+# 	carry
+# 	cascade
+# 	carry_sum
+# 	exp
+# 	soft
+# 	opndrn
+# 	row_global
+# 	TRI
+# 	lut_input
+# 	lut_output
+# 	latch
+# 	dlatch
+# 	dff
+# 	dffe
+# 	dffea
+# 	dffeas
+# 	dffeas_pr
+# 	tff
+# 	tffe
+# 	jkff
+# 	jkffe
+# 	srff
+# 	srffe
+# 	clklock
+# 	alt_inbuf
+# 	alt_outbuf
+# 	alt_outbuf_tri
+# 	alt_iobuf
+# 	alt_inbuf_diff
+# 	alt_outbuf_diff
+# 	alt_outbuf_tri_diff
+# 	alt_iobuf_diff
+# 	alt_bidir_diff
+# 	alt_bidir_buf
+# End time: 11:01:59 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:01 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/220model.v -work lpm_ver 
+# -- Compiling module LPM_MEMORY_INITIALIZATION
+# -- Compiling module LPM_HINT_EVALUATION
+# -- Compiling module LPM_DEVICE_FAMILIES
+# -- Compiling module lpm_constant
+# -- Compiling module lpm_inv
+# -- Compiling module lpm_and
+# -- Compiling module lpm_or
+# -- Compiling module lpm_xor
+# -- Compiling module lpm_bustri
+# -- Compiling module lpm_mux
+# -- Compiling module lpm_decode
+# -- Compiling module lpm_clshift
+# -- Compiling module lpm_add_sub
+# -- Compiling module lpm_compare
+# -- Compiling module lpm_mult
+# -- Compiling module lpm_divide
+# -- Compiling module lpm_abs
+# -- Compiling module lpm_counter
+# -- Compiling module lpm_latch
+# -- Compiling module lpm_ff
+# -- Compiling module lpm_shiftreg
+# -- Compiling module lpm_ram_dq
+# -- Compiling module lpm_ram_dp
+# -- Compiling module lpm_ram_io
+# -- Compiling module lpm_rom
+# -- Compiling module lpm_fifo
+# -- Compiling module lpm_fifo_dc_dffpipe
+# -- Compiling module lpm_fifo_dc_fefifo
+# -- Compiling module lpm_fifo_dc_async
+# -- Compiling module lpm_fifo_dc
+# -- Compiling module lpm_inpad
+# -- Compiling module lpm_outpad
+# -- Compiling module lpm_bipad
+# 
+# Top level modules:
+# 	lpm_constant
+# 	lpm_inv
+# 	lpm_and
+# 	lpm_or
+# 	lpm_xor
+# 	lpm_bustri
+# 	lpm_mux
+# 	lpm_decode
+# 	lpm_clshift
+# 	lpm_add_sub
+# 	lpm_compare
+# 	lpm_mult
+# 	lpm_divide
+# 	lpm_abs
+# 	lpm_counter
+# 	lpm_latch
+# 	lpm_ff
+# 	lpm_shiftreg
+# 	lpm_ram_dq
+# 	lpm_ram_dp
+# 	lpm_ram_io
+# 	lpm_rom
+# 	lpm_fifo
+# 	lpm_fifo_dc
+# 	lpm_inpad
+# 	lpm_outpad
+# 	lpm_bipad
+# End time: 11:02:01 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:02 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/sgate.v -work sgate_ver 
+# -- Compiling module oper_add
+# -- Compiling module oper_addsub
+# -- Compiling module mux21
+# -- Compiling module io_buf_tri
+# -- Compiling module io_buf_opdrn
+# -- Compiling module oper_mult
+# -- Compiling module tri_bus
+# -- Compiling module oper_div
+# -- Compiling module oper_mod
+# -- Compiling module oper_left_shift
+# -- Compiling module oper_right_shift
+# -- Compiling module oper_rotate_left
+# -- Compiling module oper_rotate_right
+# -- Compiling module oper_less_than
+# -- Compiling module oper_mux
+# -- Compiling module oper_selector
+# -- Compiling module oper_decoder
+# -- Compiling module oper_bus_mux
+# -- Compiling module oper_latch
+# 
+# Top level modules:
+# 	oper_add
+# 	oper_addsub
+# 	mux21
+# 	io_buf_tri
+# 	io_buf_opdrn
+# 	oper_mult
+# 	tri_bus
+# 	oper_div
+# 	oper_mod
+# 	oper_left_shift
+# 	oper_right_shift
+# 	oper_rotate_left
+# 	oper_rotate_right
+# 	oper_less_than
+# 	oper_mux
+# 	oper_selector
+# 	oper_decoder
+# 	oper_bus_mux
+# 	oper_latch
+# End time: 11:02:02 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:02 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/altera_mf.v -work altera_mf_ver 
+# -- Compiling module lcell
+# -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
+# -- Compiling module ALTERA_MF_HINT_EVALUATION
+# -- Compiling module ALTERA_DEVICE_FAMILIES
+# -- Compiling module dffp
+# -- Compiling module pll_iobuf
+# -- Compiling module stx_m_cntr
+# -- Compiling module stx_n_cntr
+# -- Compiling module stx_scale_cntr
+# -- Compiling module MF_pll_reg
+# -- Compiling module MF_stratix_pll
+# -- Compiling module arm_m_cntr
+# -- Compiling module arm_n_cntr
+# -- Compiling module arm_scale_cntr
+# -- Compiling module MF_stratixii_pll
+# -- Compiling module ttn_m_cntr
+# -- Compiling module ttn_n_cntr
+# -- Compiling module ttn_scale_cntr
+# -- Compiling module MF_stratixiii_pll
+# -- Compiling module cda_m_cntr
+# -- Compiling module cda_n_cntr
+# -- Compiling module cda_scale_cntr
+# -- Compiling module MF_cycloneiii_pll
+# -- Compiling module MF_cycloneiiigl_m_cntr
+# -- Compiling module MF_cycloneiiigl_n_cntr
+# -- Compiling module MF_cycloneiiigl_scale_cntr
+# -- Compiling module cycloneiiigl_post_divider
+# -- Compiling module MF_cycloneiiigl_pll
+# -- Compiling module altpll
+# -- Compiling module altlvds_rx
+# -- Compiling module stratix_lvds_rx
+# -- Compiling module stratixgx_dpa_lvds_rx
+# -- Compiling module stratixii_lvds_rx
+# -- Compiling module flexible_lvds_rx
+# -- Compiling module stratixiii_lvds_rx
+# -- Compiling module stratixiii_lvds_rx_channel
+# -- Compiling module stratixiii_lvds_rx_dpa
+# -- Compiling module altlvds_tx
+# -- Compiling module stratixv_local_clk_divider
+# -- Compiling module stratix_tx_outclk
+# -- Compiling module stratixii_tx_outclk
+# -- Compiling module flexible_lvds_tx
+# -- Compiling module dcfifo_dffpipe
+# -- Compiling module dcfifo_fefifo
+# -- Compiling module dcfifo_async
+# -- Compiling module dcfifo_sync
+# -- Compiling module dcfifo_low_latency
+# -- Compiling module dcfifo_mixed_widths
+# -- Compiling module dcfifo
+# -- Compiling module altera_syncram_derived
+# -- Compiling module altera_syncram_derived_forwarding_logic
+# -- Compiling module altaccumulate
+# -- Compiling module altmult_accum
+# -- Compiling module altmult_add
+# -- Compiling module altfp_mult
+# -- Compiling module altsqrt
+# -- Compiling module altclklock
+# -- Compiling module altddio_in
+# -- Compiling module altddio_out
+# -- Compiling module altddio_bidir
+# -- Compiling module altdpram
+# -- Compiling module altsyncram
+# -- Compiling module altsyncram_body
+# -- Compiling module alt3pram
+# -- Compiling module parallel_add
+# -- Compiling module scfifo
+# -- Compiling module altshift_taps
+# -- Compiling module a_graycounter
+# -- Compiling module altsquare
+# -- Compiling module altera_std_synchronizer
+# -- Compiling module altera_std_synchronizer_bundle
+# -- Compiling module alt_cal
+# -- Compiling module alt_cal_mm
+# -- Compiling module alt_cal_c3gxb
+# -- Compiling module alt_cal_sv
+# -- Compiling module alt_cal_av
+# -- Compiling module alt_aeq_s4
+# -- Compiling module alt_eyemon
+# -- Compiling module alt_dfe
+# -- Compiling module signal_gen
+# -- Compiling module jtag_tap_controller
+# -- Compiling module dummy_hub
+# -- Compiling module sld_virtual_jtag
+# -- Compiling module sld_signaltap
+# -- Compiling module altstratixii_oct
+# -- Compiling module altparallel_flash_loader
+# -- Compiling module altserial_flash_loader
+# -- Compiling module alt_fault_injection
+# -- Compiling module sld_virtual_jtag_basic
+# -- Compiling module altsource_probe
+# 
+# Top level modules:
+# 	lcell
+# 	altpll
+# 	altlvds_rx
+# 	altlvds_tx
+# 	dcfifo
+# 	altaccumulate
+# 	altmult_accum
+# 	altmult_add
+# 	altfp_mult
+# 	altsqrt
+# 	altclklock
+# 	altddio_bidir
+# 	altdpram
+# 	alt3pram
+# 	parallel_add
+# 	scfifo
+# 	altshift_taps
+# 	a_graycounter
+# 	altsquare
+# 	altera_std_synchronizer_bundle
+# 	alt_cal
+# 	alt_cal_mm
+# 	alt_cal_c3gxb
+# 	alt_cal_sv
+# 	alt_cal_av
+# 	alt_aeq_s4
+# 	alt_eyemon
+# 	alt_dfe
+# 	sld_virtual_jtag
+# 	sld_signaltap
+# 	altstratixii_oct
+# 	altparallel_flash_loader
+# 	altserial_flash_loader
+# 	alt_fault_injection
+# 	sld_virtual_jtag_basic
+# 	altsource_probe
+# End time: 11:02:03 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:03 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/altera_lnsim.sv -work altera_lnsim_ver 
+# -- Compiling package altera_lnsim_functions
+# -- Compiling package altera_generic_pll_functions
+# -- Compiling module generic_pll
+# -- Importing package altera_lnsim_functions
+# -- Importing package altera_generic_pll_functions
+# -- Compiling module generic_cdr
+# -- Compiling module common_28nm_ram_pulse_generator
+# -- Compiling module common_28nm_ram_register
+# -- Compiling module common_28nm_ram_block
+# -- Compiling module generic_m20k
+# -- Compiling module generic_m10k
+# -- Compiling module common_28nm_mlab_cell_pulse_generator
+# -- Compiling module common_28nm_mlab_latch
+# -- Compiling module common_28nm_mlab_cell_core
+# -- Compiling module common_porta_latches
+# -- Compiling module generic_28nm_hp_mlab_cell_impl
+# -- Compiling module common_porta_registers
+# -- Compiling module generic_28nm_lc_mlab_cell_impl
+# -- Compiling module common_28nm_lutram_register
+# -- Compiling module generic_14nm_mlab_cell_impl
+# -- Compiling module common_14nm_lutram_register
+# -- Compiling module generic_mux
+# -- Compiling module generic_device_pll
+# -- Compiling module altera_mult_add
+# -- Compiling module altera_mult_add_rtl
+# -- Compiling module ama_signed_extension_function
+# -- Compiling module ama_dynamic_signed_function
+# -- Compiling module ama_register_function
+# -- Compiling module ama_register_with_ext_function
+# -- Compiling module ama_data_split_reg_ext_function
+# -- Compiling module ama_coef_reg_ext_function
+# -- Compiling module ama_adder_function
+# -- Compiling module ama_multiplier_function
+# -- Compiling module ama_preadder_function
+# -- Compiling module ama_chainout_adder_accumulator_function
+# -- Compiling module ama_systolic_adder_function
+# -- Compiling module ama_scanchain
+# -- Compiling module ama_latency_function
+# -- Compiling module altera_pll_reconfig_tasks
+# -- Compiling module altera_syncram
+# -- Compiling module altera_syncram_forwarding_logic
+# -- Compiling module ALTERA_LNSIM_MEMORY_INITIALIZATION
+# -- Compiling module altera_stratixv_pll
+# -- Compiling module altera_arriav_pll
+# -- Compiling module altera_arriavgz_pll
+# -- Compiling module altera_cyclonev_pll
+# -- Compiling module altera_pll
+# -- Compiling module dps_extra_kick
+# -- Compiling module dprio_init
+# -- Compiling module dps_pulse_gen
+# -- Compiling module altera_iopll
+# -- Compiling module dps_pulse_gen_iopll
+# -- Compiling module twentynm_iopll_arlol
+# -- Compiling module fourteennm_altera_iopll
+# -- Compiling module dps_pulse_gen_fourteennm_iopll
+# -- Compiling package fourteennm_iopll_functions
+# -- Compiling module fourteennm_simple_iopll
+# -- Importing package fourteennm_iopll_functions
+# -- Compiling module fourteennm_sub_iopll
+# -- Compiling module twentynm_iopll_ip
+# -- Compiling module altera_iopll_rotation_lcells
+# -- Compiling module altera_pll_dps_lcell_comb
+# -- Compiling module iopll_bootstrap
+# 
+# Top level modules:
+# 	generic_cdr
+# 	generic_m20k
+# 	generic_m10k
+# 	common_porta_latches
+# 	generic_28nm_hp_mlab_cell_impl
+# 	generic_28nm_lc_mlab_cell_impl
+# 	generic_14nm_mlab_cell_impl
+# 	generic_mux
+# 	generic_device_pll
+# 	altera_mult_add
+# 	altera_pll_reconfig_tasks
+# 	altera_syncram
+# 	altera_pll
+# 	altera_iopll
+# 	fourteennm_altera_iopll
+# 	fourteennm_simple_iopll
+# End time: 11:02:04 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:04 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v -work cyclonev_ver 
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# 
+# Top level modules:
+# End time: 11:02:06 on Apr 09,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 10
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:06 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v -work cyclonev_ver 
+# 
+# Top level modules:
+# End time: 11:02:07 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:07 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/cyclonev_atoms.v -work cyclonev_ver 
+# -- Compiling UDP CYCLONEV_PRIM_DFFE
+# -- Compiling UDP CYCLONEV_PRIM_DFFEAS
+# -- Compiling UDP CYCLONEV_PRIM_DFFEAS_HIGH
+# -- Compiling module cyclonev_dffe
+# -- Compiling module cyclonev_mux21
+# -- Compiling module cyclonev_mux41
+# -- Compiling module cyclonev_and1
+# -- Compiling module cyclonev_and16
+# -- Compiling module cyclonev_bmux21
+# -- Compiling module cyclonev_b17mux21
+# -- Compiling module cyclonev_nmux21
+# -- Compiling module cyclonev_b5mux21
+# -- Compiling module cyclonev_ff
+# -- Compiling module cyclonev_lcell_comb
+# -- Compiling module cyclonev_routing_wire
+# -- Compiling module cyclonev_ram_block
+# -- Compiling module cyclonev_mlab_cell
+# -- Compiling module cyclonev_io_ibuf
+# -- Compiling module cyclonev_io_obuf
+# -- Compiling module cyclonev_ddio_out
+# -- Compiling module cyclonev_ddio_oe
+# -- Compiling module cyclonev_ddio_in
+# -- Compiling module cyclonev_io_pad
+# -- Compiling module cyclonev_pseudo_diff_out
+# -- Compiling module cyclonev_bias_logic
+# -- Compiling module cyclonev_bias_generator
+# -- Compiling module cyclonev_bias_block
+# -- Compiling module cyclonev_clk_phase_select
+# -- Compiling module cyclonev_clkena
+# -- Compiling module cyclonev_clkselect
+# -- Compiling module cyclonev_delay_chain
+# -- Compiling module cyclonev_dll_offset_ctrl
+# -- Compiling module cyclonev_dll
+# -- Compiling module cyclonev_dqs_config
+# -- Compiling module cyclonev_dqs_delay_chain
+# -- Compiling module cyclonev_dqs_enable_ctrl
+# -- Compiling module cyclonev_duty_cycle_adjustment
+# -- Compiling module cyclonev_fractional_pll
+# -- Compiling module cyclonev_half_rate_input
+# -- Compiling module cyclonev_input_phase_alignment
+# -- Compiling module cyclonev_io_clock_divider
+# -- Compiling module cyclonev_io_config
+# -- Compiling module cyclonev_leveling_delay_chain
+# -- Compiling module cyclonev_pll_dll_output
+# -- Compiling module cyclonev_pll_dpa_output
+# -- Compiling module cyclonev_pll_extclk_output
+# -- Compiling module cyclonev_pll_lvds_output
+# -- Compiling module cyclonev_pll_output_counter
+# -- Compiling module cyclonev_pll_reconfig
+# -- Compiling module cyclonev_pll_refclk_select
+# -- Compiling module cyclonev_termination_logic
+# -- Compiling module cyclonev_termination
+# -- Compiling module cyclonev_asmiblock
+# -- Compiling module cyclonev_chipidblock
+# -- Compiling module cyclonev_controller
+# -- Compiling module cyclonev_crcblock
+# -- Compiling module cyclonev_jtag
+# -- Compiling module cyclonev_prblock
+# -- Compiling module cyclonev_rublock
+# -- Compiling module cyclonev_tsdblock
+# -- Compiling module cyclonev_read_fifo
+# -- Compiling module cyclonev_read_fifo_read_enable
+# -- Compiling module cyclonev_phy_clkbuf
+# -- Compiling module cyclonev_ir_fifo_userdes
+# -- Compiling module cyclonev_read_fifo_read_clock_select
+# -- Compiling module cyclonev_lfifo
+# -- Compiling module cyclonev_vfifo
+# -- Compiling module cyclonev_mac
+# -- Compiling module cyclonev_mem_phy
+# -- Compiling module cyclonev_oscillator
+# -- Compiling module cyclonev_hps_interface_fpga2sdram
+# 
+# Top level modules:
+# 	cyclonev_dffe
+# 	cyclonev_mux41
+# 	cyclonev_and1
+# 	cyclonev_and16
+# 	cyclonev_bmux21
+# 	cyclonev_b17mux21
+# 	cyclonev_nmux21
+# 	cyclonev_b5mux21
+# 	cyclonev_ff
+# 	cyclonev_lcell_comb
+# 	cyclonev_routing_wire
+# 	cyclonev_ram_block
+# 	cyclonev_mlab_cell
+# 	cyclonev_io_ibuf
+# 	cyclonev_io_obuf
+# 	cyclonev_ddio_out
+# 	cyclonev_ddio_oe
+# 	cyclonev_ddio_in
+# 	cyclonev_io_pad
+# 	cyclonev_pseudo_diff_out
+# 	cyclonev_bias_block
+# 	cyclonev_clk_phase_select
+# 	cyclonev_clkena
+# 	cyclonev_clkselect
+# 	cyclonev_delay_chain
+# 	cyclonev_dll_offset_ctrl
+# 	cyclonev_dll
+# 	cyclonev_dqs_config
+# 	cyclonev_dqs_delay_chain
+# 	cyclonev_dqs_enable_ctrl
+# 	cyclonev_duty_cycle_adjustment
+# 	cyclonev_fractional_pll
+# 	cyclonev_half_rate_input
+# 	cyclonev_input_phase_alignment
+# 	cyclonev_io_clock_divider
+# 	cyclonev_io_config
+# 	cyclonev_leveling_delay_chain
+# 	cyclonev_pll_dll_output
+# 	cyclonev_pll_dpa_output
+# 	cyclonev_pll_extclk_output
+# 	cyclonev_pll_lvds_output
+# 	cyclonev_pll_output_counter
+# 	cyclonev_pll_reconfig
+# 	cyclonev_pll_refclk_select
+# 	cyclonev_termination_logic
+# 	cyclonev_termination
+# 	cyclonev_asmiblock
+# 	cyclonev_chipidblock
+# 	cyclonev_controller
+# 	cyclonev_crcblock
+# 	cyclonev_jtag
+# 	cyclonev_prblock
+# 	cyclonev_rublock
+# 	cyclonev_tsdblock
+# 	cyclonev_read_fifo
+# 	cyclonev_read_fifo_read_enable
+# 	cyclonev_phy_clkbuf
+# 	cyclonev_ir_fifo_userdes
+# 	cyclonev_read_fifo_read_clock_select
+# 	cyclonev_lfifo
+# 	cyclonev_vfifo
+# 	cyclonev_mac
+# 	cyclonev_mem_phy
+# 	cyclonev_oscillator
+# 	cyclonev_hps_interface_fpga2sdram
+# End time: 11:02:07 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:08 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v -work cyclonev_hssi_ver 
+# 
+# Top level modules:
+# End time: 11:02:10 on Apr 09,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:10 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v -work cyclonev_hssi_ver 
+# -- Compiling module cyclonev_hssi_8g_pcs_aggregate
+# -- Compiling module cyclonev_hssi_8g_rx_pcs
+# -- Compiling module cyclonev_hssi_8g_tx_pcs
+# -- Compiling module cyclonev_hssi_common_pcs_pma_interface
+# -- Compiling module cyclonev_hssi_common_pld_pcs_interface
+# -- Compiling module cyclonev_hssi_pipe_gen1_2
+# -- Compiling module cyclonev_hssi_pma_aux
+# -- Compiling module cyclonev_hssi_pma_int
+# -- Compiling module cyclonev_hssi_pma_rx_buf
+# -- Compiling module cyclonev_hssi_pma_rx_deser
+# -- Compiling module cyclonev_hssi_pma_tx_buf
+# -- Compiling module cyclonev_hssi_pma_tx_cgb
+# -- Compiling module cyclonev_hssi_pma_tx_ser
+# -- Compiling module cyclonev_hssi_pma_cdr_refclk_select_mux
+# -- Compiling module cyclonev_hssi_rx_pcs_pma_interface
+# -- Compiling module cyclonev_hssi_rx_pld_pcs_interface
+# -- Compiling module cyclonev_hssi_tx_pcs_pma_interface
+# -- Compiling module cyclonev_hssi_tx_pld_pcs_interface
+# -- Compiling module cyclonev_hssi_refclk_divider
+# -- Compiling module cyclonev_pll_aux
+# -- Compiling module cyclonev_channel_pll
+# -- Compiling module cyclonev_hssi_avmm_interface
+# -- Compiling module cyclonev_hssi_pma_hi_pmaif
+# -- Compiling module cyclonev_hssi_pma_hi_xcvrif
+# -- Compiling module arriav_hssi_8g_pcs_aggregate
+# -- Compiling module arriav_hssi_8g_rx_pcs
+# -- Compiling module arriav_hssi_8g_tx_pcs
+# -- Compiling module arriav_hssi_common_pcs_pma_interface
+# -- Compiling module arriav_hssi_common_pld_pcs_interface
+# -- Compiling module arriav_hssi_pipe_gen1_2
+# -- Compiling module arriav_hssi_pma_aux
+# -- Compiling module arriav_hssi_pma_int
+# -- Compiling module arriav_hssi_pma_rx_buf
+# -- Compiling module arriav_hssi_pma_rx_deser
+# -- Compiling module arriav_hssi_pma_tx_buf
+# -- Compiling module arriav_hssi_pma_tx_cgb
+# -- Compiling module arriav_hssi_pma_tx_ser
+# -- Compiling module arriav_hssi_pma_cdr_refclk_select_mux
+# -- Compiling module arriav_hssi_rx_pcs_pma_interface
+# -- Compiling module arriav_hssi_rx_pld_pcs_interface
+# -- Compiling module arriav_hssi_tx_pcs_pma_interface
+# -- Compiling module arriav_hssi_tx_pld_pcs_interface
+# -- Compiling module arriav_hssi_refclk_divider
+# -- Compiling module arriav_pll_aux
+# -- Compiling module arriav_channel_pll
+# -- Compiling module arriav_hssi_avmm_interface
+# -- Compiling module arriav_hssi_pma_hi_pmaif
+# -- Compiling module arriav_hssi_pma_hi_xcvrif
+# 
+# Top level modules:
+# 	cyclonev_hssi_8g_pcs_aggregate
+# 	cyclonev_hssi_8g_rx_pcs
+# 	cyclonev_hssi_8g_tx_pcs
+# 	cyclonev_hssi_common_pcs_pma_interface
+# 	cyclonev_hssi_common_pld_pcs_interface
+# 	cyclonev_hssi_pipe_gen1_2
+# 	cyclonev_hssi_pma_aux
+# 	cyclonev_hssi_pma_int
+# 	cyclonev_hssi_pma_rx_buf
+# 	cyclonev_hssi_pma_rx_deser
+# 	cyclonev_hssi_pma_tx_buf
+# 	cyclonev_hssi_pma_tx_cgb
+# 	cyclonev_hssi_pma_tx_ser
+# 	cyclonev_hssi_pma_cdr_refclk_select_mux
+# 	cyclonev_hssi_rx_pcs_pma_interface
+# 	cyclonev_hssi_rx_pld_pcs_interface
+# 	cyclonev_hssi_tx_pcs_pma_interface
+# 	cyclonev_hssi_tx_pld_pcs_interface
+# 	cyclonev_hssi_refclk_divider
+# 	cyclonev_pll_aux
+# 	cyclonev_channel_pll
+# 	cyclonev_hssi_avmm_interface
+# 	cyclonev_hssi_pma_hi_pmaif
+# 	cyclonev_hssi_pma_hi_xcvrif
+# 	arriav_hssi_8g_pcs_aggregate
+# 	arriav_hssi_8g_rx_pcs
+# 	arriav_hssi_8g_tx_pcs
+# 	arriav_hssi_common_pcs_pma_interface
+# 	arriav_hssi_common_pld_pcs_interface
+# 	arriav_hssi_pipe_gen1_2
+# 	arriav_hssi_pma_aux
+# 	arriav_hssi_pma_int
+# 	arriav_hssi_pma_rx_buf
+# 	arriav_hssi_pma_rx_deser
+# 	arriav_hssi_pma_tx_buf
+# 	arriav_hssi_pma_tx_cgb
+# 	arriav_hssi_pma_tx_ser
+# 	arriav_hssi_pma_cdr_refclk_select_mux
+# 	arriav_hssi_rx_pcs_pma_interface
+# 	arriav_hssi_rx_pld_pcs_interface
+# 	arriav_hssi_tx_pcs_pma_interface
+# 	arriav_hssi_tx_pld_pcs_interface
+# 	arriav_hssi_refclk_divider
+# 	arriav_pll_aux
+# 	arriav_channel_pll
+# 	arriav_hssi_avmm_interface
+# 	arriav_hssi_pma_hi_pmaif
+# 	arriav_hssi_pma_hi_xcvrif
+# End time: 11:02:10 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:11 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v -work cyclonev_pcie_hip_ver 
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# 
+# Top level modules:
+# End time: 11:02:12 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 6
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:13 on Apr 09,2025
+# vlog -reportprogress 300 D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v -work cyclonev_pcie_hip_ver 
+# -- Compiling module cyclonev_hd_altpe2_hip_top
+# -- Compiling module arriav_hd_altpe2_hip_top
+# 
+# Top level modules:
+# 	cyclonev_hd_altpe2_hip_top
+# End time: 11:02:13 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] com
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:13 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv -work altera_common_sv_packages 
+# -- Compiling package verbosity_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:02:13 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:13 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv -L altera_common_sv_packages -work error_adapter_0 
+# -- Compiling module system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+# End time: 11:02:13 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:13 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter.v -work avalon_st_adapter 
+# -- Compiling module system_mm_interconnect_0_avalon_st_adapter
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_avalon_st_adapter
+# End time: 11:02:13 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:13 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_003.sv -L altera_common_sv_packages -work rsp_mux_003 
+# -- Compiling module system_mm_interconnect_0_rsp_mux_003
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_rsp_mux_003
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work rsp_mux_003 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_002.sv -L altera_common_sv_packages -work rsp_mux_002 
+# -- Compiling module system_mm_interconnect_0_rsp_mux_002
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_rsp_mux_002
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work rsp_mux_002 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux.sv -L altera_common_sv_packages -work rsp_mux 
+# -- Compiling module system_mm_interconnect_0_rsp_mux
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_rsp_mux
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work rsp_mux 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:14 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:14 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_004.sv -L altera_common_sv_packages -work rsp_demux_004 
+# -- Compiling module system_mm_interconnect_0_rsp_demux_004
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_rsp_demux_004
+# End time: 11:02:15 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:15 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux.sv -L altera_common_sv_packages -work rsp_demux 
+# -- Compiling module system_mm_interconnect_0_rsp_demux
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_rsp_demux
+# End time: 11:02:15 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:15 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_004.sv -L altera_common_sv_packages -work cmd_mux_004 
+# -- Compiling module system_mm_interconnect_0_cmd_mux_004
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_mux_004
+# End time: 11:02:15 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:15 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux_004 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:15 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:15 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_002.sv -L altera_common_sv_packages -work cmd_mux_002 
+# -- Compiling module system_mm_interconnect_0_cmd_mux_002
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_mux_002
+# End time: 11:02:15 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:15 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux_002 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:16 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:16 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_001.sv -L altera_common_sv_packages -work cmd_mux_001 
+# -- Compiling module system_mm_interconnect_0_cmd_mux_001
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_mux_001
+# End time: 11:02:16 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:16 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux_001 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:16 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:16 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux.sv -L altera_common_sv_packages -work cmd_mux 
+# -- Compiling module system_mm_interconnect_0_cmd_mux
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_mux
+# End time: 11:02:16 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:16 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 11:02:16 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_003.sv -L altera_common_sv_packages -work cmd_demux_003 
+# -- Compiling module system_mm_interconnect_0_cmd_demux_003
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_demux_003
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_002.sv -L altera_common_sv_packages -work cmd_demux_002 
+# -- Compiling module system_mm_interconnect_0_cmd_demux_002
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_demux_002
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_001.sv -L altera_common_sv_packages -work cmd_demux_001 
+# -- Compiling module system_mm_interconnect_0_cmd_demux_001
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_demux_001
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux.sv -L altera_common_sv_packages -work cmd_demux 
+# -- Compiling module system_mm_interconnect_0_cmd_demux
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_cmd_demux
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter 
+# -- Compiling module altera_merlin_traffic_limiter
+# 
+# Top level modules:
+# 	altera_merlin_traffic_limiter
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:17 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_reorder_memory.sv -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter 
+# -- Compiling module altera_merlin_reorder_memory
+# -- Compiling module memory_pointer_controller
+# 
+# Top level modules:
+# 	altera_merlin_reorder_memory
+# End time: 11:02:17 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter 
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# End time: 11:02:18 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v -L altera_common_sv_packages -work DMA_Controller_avalon_master_limiter 
+# -- Compiling module altera_avalon_st_pipeline_base
+# 
+# Top level modules:
+# 	altera_avalon_st_pipeline_base
+# End time: 11:02:18 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_008.sv -L altera_common_sv_packages -work router_008 
+# -- Compiling module system_mm_interconnect_0_router_008_default_decode
+# -- Compiling module system_mm_interconnect_0_router_008
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_008
+# End time: 11:02:18 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_006.sv -L altera_common_sv_packages -work router_006 
+# -- Compiling module system_mm_interconnect_0_router_006_default_decode
+# -- Compiling module system_mm_interconnect_0_router_006
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_006
+# End time: 11:02:18 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_005.sv -L altera_common_sv_packages -work router_005 
+# -- Compiling module system_mm_interconnect_0_router_005_default_decode
+# -- Compiling module system_mm_interconnect_0_router_005
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_005
+# End time: 11:02:18 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:18 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_004.sv -L altera_common_sv_packages -work router_004 
+# -- Compiling module system_mm_interconnect_0_router_004_default_decode
+# -- Compiling module system_mm_interconnect_0_router_004
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_004
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:19 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_003.sv -L altera_common_sv_packages -work router_003 
+# -- Compiling module system_mm_interconnect_0_router_003_default_decode
+# -- Compiling module system_mm_interconnect_0_router_003
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_003
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:19 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_002.sv -L altera_common_sv_packages -work router_002 
+# -- Compiling module system_mm_interconnect_0_router_002_default_decode
+# -- Compiling module system_mm_interconnect_0_router_002
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router_002
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:19 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router.sv -L altera_common_sv_packages -work router 
+# -- Compiling module system_mm_interconnect_0_router_default_decode
+# -- Compiling module system_mm_interconnect_0_router
+# 
+# Top level modules:
+# 	system_mm_interconnect_0_router
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:19 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v -work onchip_memory2_0_s1_agent_rsp_fifo 
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:19 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv -L altera_common_sv_packages -work onchip_memory2_0_s1_agent 
+# -- Compiling module altera_merlin_slave_agent
+# 
+# Top level modules:
+# 	altera_merlin_slave_agent
+# End time: 11:02:19 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:20 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv -L altera_common_sv_packages -work onchip_memory2_0_s1_agent 
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# End time: 11:02:20 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:20 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_master_agent.sv -L altera_common_sv_packages -work DMA_Controller_avalon_master_agent 
+# -- Compiling module altera_merlin_master_agent
+# 
+# Top level modules:
+# 	altera_merlin_master_agent
+# End time: 11:02:20 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:20 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_translator.sv -L altera_common_sv_packages -work onchip_memory2_0_s1_translator 
+# -- Compiling module altera_merlin_slave_translator
+# 
+# Top level modules:
+# 	altera_merlin_slave_translator
+# End time: 11:02:20 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:20 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv -L altera_common_sv_packages -work DMA_Controller_avalon_master_translator 
+# -- Compiling module altera_merlin_master_translator
+# 
+# Top level modules:
+# 	altera_merlin_master_translator
+# End time: 11:02:20 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:20 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v -work cpu 
+# -- Compiling module system_nios2_gen2_0_cpu_register_bank_a_module
+# -- Compiling module system_nios2_gen2_0_cpu_register_bank_b_module
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_debug
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_break
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_xbrk
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_dbrk
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_itrace
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_td_mode
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_dtrace
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_fifo
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_pib
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci_im
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_performance_monitors
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_avalon_reg
+# -- Compiling module system_nios2_gen2_0_cpu_ociram_sp_ram_module
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_ocimem
+# -- Compiling module system_nios2_gen2_0_cpu_nios2_oci
+# -- Compiling module system_nios2_gen2_0_cpu
+# 
+# Top level modules:
+# 	system_nios2_gen2_0_cpu_nios2_performance_monitors
+# 	system_nios2_gen2_0_cpu
+# End time: 11:02:20 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:21 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_sysclk.v -work cpu 
+# -- Compiling module system_nios2_gen2_0_cpu_debug_slave_sysclk
+# 
+# Top level modules:
+# 	system_nios2_gen2_0_cpu_debug_slave_sysclk
+# End time: 11:02:21 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:21 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_tck.v -work cpu 
+# -- Compiling module system_nios2_gen2_0_cpu_debug_slave_tck
+# 
+# Top level modules:
+# 	system_nios2_gen2_0_cpu_debug_slave_tck
+# End time: 11:02:21 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:21 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_debug_slave_wrapper.v -work cpu 
+# -- Compiling module system_nios2_gen2_0_cpu_debug_slave_wrapper
+# 
+# Top level modules:
+# 	system_nios2_gen2_0_cpu_debug_slave_wrapper
+# End time: 11:02:21 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:21 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu_test_bench.v -work cpu 
+# -- Compiling module system_nios2_gen2_0_cpu_test_bench
+# 
+# Top level modules:
+# 	system_nios2_gen2_0_cpu_test_bench
+# End time: 11:02:21 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:21 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v -work rst_controller 
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 11:02:21 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v -work rst_controller 
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_irq_mapper.sv -L altera_common_sv_packages -work irq_mapper 
+# -- Compiling module system_irq_mapper
+# 
+# Top level modules:
+# 	system_irq_mapper
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0.v -work mm_interconnect_0 
+# -- Compiling module system_mm_interconnect_0
+# 
+# Top level modules:
+# 	system_mm_interconnect_0
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_onchip_memory2_1.v -work onchip_memory2_1 
+# -- Compiling module system_onchip_memory2_1
+# 
+# Top level modules:
+# 	system_onchip_memory2_1
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_onchip_memory2_0.v -work onchip_memory2_0 
+# -- Compiling module system_onchip_memory2_0
+# 
+# Top level modules:
+# 	system_onchip_memory2_0
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:22 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0.v -work nios2_gen2_0 
+# -- Compiling module system_nios2_gen2_0
+# 
+# Top level modules:
+# 	system_nios2_gen2_0
+# End time: 11:02:22 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_jtag_uart_0.v -work jtag_uart_0 
+# -- Compiling module system_jtag_uart_0_sim_scfifo_w
+# -- Compiling module system_jtag_uart_0_scfifo_w
+# -- Compiling module system_jtag_uart_0_sim_scfifo_r
+# -- Compiling module system_jtag_uart_0_scfifo_r
+# -- Compiling module system_jtag_uart_0
+# 
+# Top level modules:
+# 	system_jtag_uart_0
+# End time: 11:02:23 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/CONTROL_SLAVE.v -work DMA_Controller 
+# -- Compiling module CONTROL_SLAVE
+# 
+# Top level modules:
+# 	CONTROL_SLAVE
+# End time: 11:02:23 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/DMAController.v -work DMA_Controller 
+# -- Compiling module DMAController
+# 
+# Top level modules:
+# 	DMAController
+# End time: 11:02:23 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/READ_MASTER.v -work DMA_Controller 
+# -- Compiling module READ_MASTER
+# 
+# Top level modules:
+# 	READ_MASTER
+# End time: 11:02:23 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/WRITE_MASTER.v -work DMA_Controller 
+# -- Compiling module WRITE_MASTER
+# 
+# Top level modules:
+# 	WRITE_MASTER
+# End time: 11:02:23 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:23 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/FIFO_IP.v -work DMA_Controller 
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# End time: 11:02:24 on Apr 09,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:24 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv -L altera_common_sv_packages -work system_inst_reset_bfm 
+# -- Compiling module altera_avalon_reset_source
+# -- Importing package altera_common_sv_packages.verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_reset_source
+# End time: 11:02:24 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:24 on Apr 09,2025
+# vlog -reportprogress 300 -sv D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/altera_avalon_clock_source.sv -L altera_common_sv_packages -work system_inst_clk_bfm 
+# -- Compiling module altera_avalon_clock_source
+# -- Importing package altera_common_sv_packages.verbosity_pkg
+# 
+# Top level modules:
+# 	altera_avalon_clock_source
+# End time: 11:02:24 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:24 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v -work system_inst 
+# -- Compiling module system
+# 
+# Top level modules:
+# 	system
+# End time: 11:02:24 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 11:02:24 on Apr 09,2025
+# vlog -reportprogress 300 D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/system_tb.v 
+# -- Compiling module system_tb
+# 
+# Top level modules:
+# 	system_tb
+# End time: 11:02:24 on Apr 09,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# [exec] elab
+# vsim -t ps -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_004 -L rsp_demux -L cmd_mux_004 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_008 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_0_s1_agent_rsp_fifo -L onchip_memory2_0_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_0_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver system_tb 
+# Start time: 11:02:24 on Apr 09,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.system_tb(fast)
+# Loading sv_std.std
+# Loading DMA_Controller_avalon_master_translator.altera_merlin_master_translator(fast)
+# Loading DMA_Controller_avalon_master_translator.altera_merlin_master_translator(fast__1)
+# Loading DMA_Controller_avalon_master_translator.altera_merlin_master_translator(fast__2)
+# Loading DMA_Controller_avalon_master_translator.altera_merlin_master_translator(fast__3)
+# Loading onchip_memory2_0_s1_translator.altera_merlin_slave_translator(fast)
+# Loading onchip_memory2_0_s1_translator.altera_merlin_slave_translator(fast__1)
+# Loading onchip_memory2_0_s1_translator.altera_merlin_slave_translator(fast__2)
+# Loading onchip_memory2_0_s1_translator.altera_merlin_slave_translator(fast__3)
+# Loading DMA_Controller_avalon_master_agent.altera_merlin_master_agent(fast)
+# Loading DMA_Controller_avalon_master_agent.altera_merlin_master_agent(fast__1)
+# Loading DMA_Controller_avalon_master_agent.altera_merlin_master_agent(fast__2)
+# Loading DMA_Controller_avalon_master_agent.altera_merlin_master_agent(fast__3)
+# Loading onchip_memory2_0_s1_agent.altera_merlin_slave_agent(fast)
+# Loading DMA_Controller_avalon_master_limiter.altera_avalon_sc_fifo(fast)
+# Loading router.system_mm_interconnect_0_router(fast)
+# Loading router_002.system_mm_interconnect_0_router_002(fast)
+# Loading router_003.system_mm_interconnect_0_router_003(fast)
+# Loading router_004.system_mm_interconnect_0_router_004(fast)
+# Loading router_005.system_mm_interconnect_0_router_005(fast)
+# Loading router_006.system_mm_interconnect_0_router_006(fast)
+# Loading router_008.system_mm_interconnect_0_router_008(fast)
+# Loading DMA_Controller_avalon_master_limiter.altera_merlin_traffic_limiter(fast)
+# Loading cmd_demux.system_mm_interconnect_0_cmd_demux(fast)
+# Loading cmd_demux_001.system_mm_interconnect_0_cmd_demux_001(fast)
+# Loading cmd_demux_002.system_mm_interconnect_0_cmd_demux_002(fast)
+# Loading cmd_demux_003.system_mm_interconnect_0_cmd_demux_003(fast)
+# Loading cmd_mux.system_mm_interconnect_0_cmd_mux(fast)
+# Loading cmd_mux_001.system_mm_interconnect_0_cmd_mux_001(fast)
+# Loading cmd_mux_002.system_mm_interconnect_0_cmd_mux_002(fast)
+# Loading cmd_mux_004.system_mm_interconnect_0_cmd_mux_004(fast)
+# Loading rsp_demux.system_mm_interconnect_0_rsp_demux(fast)
+# Loading rsp_demux_004.system_mm_interconnect_0_rsp_demux_004(fast)
+# Loading rsp_mux.system_mm_interconnect_0_rsp_mux(fast)
+# Loading rsp_mux_002.system_mm_interconnect_0_rsp_mux_002(fast)
+# Loading rsp_mux_003.system_mm_interconnect_0_rsp_mux_003(fast)
+# Loading error_adapter_0.system_mm_interconnect_0_avalon_st_adapter_error_adapter_0(fast)
+# Loading irq_mapper.system_irq_mapper(fast)
+# Loading altera_common_sv_packages.verbosity_pkg(fast)
+# Loading system_inst_clk_bfm.altera_avalon_clock_source(fast)
+# Loading system_inst_reset_bfm.altera_avalon_reset_source(fast)
+#  
+elab_debug
+# [exec] elab_debug
+# End time: 11:02:52 on Apr 09,2025, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" -t ps -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux -L rsp_demux_004 -L rsp_demux -L cmd_mux_004 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L DMA_Controller_avalon_master_limiter -L router_008 -L router_006 -L router_005 -L router_004 -L router_003 -L router_002 -L router -L onchip_memory2_0_s1_agent_rsp_fifo -L onchip_memory2_0_s1_agent -L DMA_Controller_avalon_master_agent -L onchip_memory2_0_s1_translator -L DMA_Controller_avalon_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L onchip_memory2_1 -L onchip_memory2_0 -L nios2_gen2_0 -L jtag_uart_0 -L DMA_Controller -L system_inst_reset_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver system_tb 
+# Start time: 11:02:53 on Apr 09,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+# Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v(75): (vopt-2685) [TFMPC] - Too few port connections for 'dma_controller'.  Expected 18, found 17.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v(75): (vopt-2718) [TFMPC] - Missing connection for port 'oWM_byteenable'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v(95): (vopt-2685) [TFMPC] - Too few port connections for 'jtag_uart_0'.  Expected 12, found 10.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v(95): (vopt-2718) [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system.v(95): (vopt-2718) [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "WRITE_MASTER(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "READ_MASTER(fast)".
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2685) [TFMPC] - Too few port connections for 'the_altsyncram'.  Expected 23, found 6.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'q_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'rden_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(116): (vopt-2718) [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2685) [TFMPC] - Too few port connections for 'the_altsyncram'.  Expected 23, found 6.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'q_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'rden_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(50): (vopt-2718) [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2685) [TFMPC] - Too few port connections for 'the_altsyncram'.  Expected 23, found 7.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: D:/FETEL_WorkDir/Y4S2_DMA_InternReport/system/testbench/system_tb/simulation/submodules/system_nios2_gen2_0_cpu.v(2168): (vopt-2718) [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: D:/FETEL_WorkDir/#   index  2: 0x656c706d
+#   index  3: 0x202e6574
+#   index  4: 0x616e6946
+#   index  5: 0x7453206c
+#   index  6: 0x73757461
+#   index  7: 0x7830203a
+# 
+#   index  8: 0x0a786c25
+#   index  9: 0x00000000
+#   index 10: 0x666e6f43
+#   index 11: 0x72756769
+#   index 12: 0x20676e69
+#   index 13: 0x20414d44
+#   index 14: 0x73676552
+#   index 15: 0x0000003a
+# 
+#   index 16: 0x65522020
+#   index 17: 0x64252067
+#   index 18: 0x65522820
+#   index 19: 0x41206461
+#   index 20: 0x29726464
+#   index 21: 0x30203a20
+#   index 22: 0x38302578
+#   index 23: 0x000a786c
+# 
+#   index 24: 0x65522020
+#   index 25: 0x64252067
+#   index 26: 0x72572820
+#   index 27: 0x20657469
+#   index 28: 0x72646441
+#   index 29: 0x30203a29
+#   index 30: 0x38302578
+#   index 31: 0x000a786c
+# 
+# 
+# Resetting destination buffer via CPU...
+# Destination buffer cleared and cache flushed.
+# 
+# Destination Buffer After Reset & Flush (read back):
+#   index  0: 0x00000000
+#   index  1: 0x00000000
+#   index  2: 0x00000000
+#   index  3: 0x00000000
+#   index  4: 0x00000000
+#   index  5: 0x00000000
+#   index  6: 0x00000000
+#   index  7: 0x00000000
+# 
+#   index  8: 0x00000000
+#   index  9: 0x00000000
+#   index 10: 0x00000000
+#   index 11: 0x00000000
+#   index 12: 0x00000000
+#   index 13: 0x00000000
+#   index 14: 0x00000000
+#   index 15: 0x00000000
+# 
+#   index 16: 0x00000000
+#   index 17: 0x00000000
+#   index 18: 0x00000000
+#   index 19: 0x00000000
+#   index 20: 0x00000000
+#   index 21: 0x00000000
+#   index 22: 0x00000000
+#   index 23: 0x00000000
+# 
+#   index 24: 0x00000000
+#   index 25: 0x00000000
+#   index 26: 0x00000000
+#   index 27: 0x00000000
+#   index 28: 0x00000000
+#   index 29: 0x00000000
+#   index 30: 0x00000000
+#   index 31: 0x00000000
+# 
+# 
+#   Reg 2 (Length)    : 128 bytes
+#   Reg 4 (Control)   : 0x00000001
+#          77417490000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020100 --> 00020100
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              xxxxxxxx --> xxxxxxxx
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77417610000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020670 --> 00020674
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77417630000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020104 --> 00020104
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000002 --> 00000002
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77417770000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020108 --> 00020108
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000003 --> 00000003
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77417890000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002067c --> 00020680
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77417910000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002010c --> 0002010c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000004 --> 00000004
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418050000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020110 --> 00020110
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000005 --> 00000005
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418170000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020688 --> 0002068c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418190000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020114 --> 00020114
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000006 --> 00000006
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418330000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020118 --> 00020118
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000007 --> 00000007
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418450000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020694 --> 00020698
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418470000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002011c --> 0002011c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000008 --> 00000008
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418610000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020120 --> 00020120
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000009 --> 00000009
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418730000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000206a0 --> 000206a4
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418750000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020124 --> 00020124
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000a --> 0000000a
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77418890000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020128 --> 00020128
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000b --> 0000000b
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419030000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002012c --> 0002012c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000c --> 0000000c
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419170000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020130 --> 00020130
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000d --> 0000000d
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419310000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020134 --> 00020134
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000e --> 0000000e
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419450000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020138 --> 00020138
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000f --> 0000000f
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419590000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002013c --> 0002013c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000010 --> 00000010
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419730000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020140 --> 00020140
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000011 --> 00000011
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77419890000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020144 --> 00020144
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000012 --> 00000012
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77420030000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020148 --> 00020148
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000013 --> 00000013
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77420170000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002014c --> 0002014c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000014 --> 00000014
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77420310000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020150 --> 00020150
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000015 --> 00000015
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#          77420450000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020154 --> 00020154
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000016 --> 00000016
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+# DMA GO bit set.
+# Polling DMA Status (Reg 5)...
+# DMA DONE bit detected.
+# 
+# Flushing D-Cache for destination buffer...
+# D-Cache flushed.
+# 
+# Verifying DMA transfer...
+# Verifying 32 words...
+# Mismatch at index 0: expected 0x00000002, got 0x00000021
+# Mismatch at index 1: expected 0x00000003, got 0x00000002
+# Mismatch at index 2: expected 0x00000004, got 0x00000003
+# Mismatch at index 3: expected 0x00000005, got 0x00000004
+# Mismatch at index 4: expected 0x00000006, got 0x00000005
+# Mismatch at index 5: expected 0x00000007, got 0x00000006
+# Mismatch at index 6: expected 0x00000008, got 0x00000007
+# Mismatch at index 7: expected 0x00000009, got 0x00000008
+# Mismatch at index 8: expected 0x0000000A, got 0x00000009
+# Mismatch at index 9: expected 0x0000000B, got 0x0000000A
+# Mismatch at index 10: expected 0x0000000C, got 0x0000000B
+# Mismatch at index 11: expected 0x0000000D, got 0x0000000C
+# Mismatch at index 12: expected 0x0000000E, got 0x0000000D
+# Mismatch at index 13: expected 0x0000000F, got 0x0000000E
+# Mismatch at index 14: expected 0x00000010, got 0x0000000F
+# Mismatch at index 15: expected 0x00000011, got 0x00000010
+# Mismatch at index 16: expected 0x00000012, got 0x00000011
+# Mismatch at index 17: expected 0x00000013, got 0x00000012
+# Mismatch at index 18: expected 0x00000014, got 0x00000013
+# Mismatch at index 19: expected 0x00000015, got 0x00000014
+# Mismatch at index 20: expected 0x00000016, got 0x00000015
+# Mismatch at index 21: expected 0x00000017, got 0x00000016
+# Mismatch at index 22: expected 0x00000018, got 0x00000017
+# Mismatch at index 23: expected 0x00000019, got 0x00000018
+# Mismatch at index 24: expected 0x0000001A, got 0x00000019
+# Mismatch at index 25: expected 0x0000001B, got 0x0000001A
+# Mismatch at index 26: expected 0x0000001C, got 0x0000001B
+# Mismatch at index 27: expected 0x0000001D, got 0x0000001C
+# Mismatch at index 28: expected 0x0000001E, got 0x0000001D
+# Mismatch at index 29: expected 0x0000001F, got 0x0000001E
+# Mismatch at index 30: expected 0x00000020, got 0x0000001F
+# Mismatch at index 31: expected 0x00000021, got 0x00000020
+# DMA Transfer Verification Failed!
+# Break key hit
+# Break in Module altsyncram_body at D:/fetel_worksoft/intelfpga_lite/23.1std/quartus/eda/sim_lib/altera_mf.v line 49371
+# End time: 11:32:35 on Apr 09,2025, Elapsed time: 1:23:27
+# Errors: 0, Warnings: 1
+trequest is asserted.
+# av_address                00020100 --> 00020100
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              xxxxxxxx --> xxxxxxxx
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5809710000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000203ac --> 000203b0
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5809730000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020104 --> 00020104
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000002 --> 00000002
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5809870000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020108 --> 00020108
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000003 --> 00000003
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5809990000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000203b8 --> 000203bc
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810010000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002010c --> 0002010c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000004 --> 00000004
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810150000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020110 --> 00020110
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000005 --> 00000005
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810270000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000203c4 --> 000203c8
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810290000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020114 --> 00020114
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000006 --> 00000006
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810430000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020118 --> 00020118
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000007 --> 00000007
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810550000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000203d0 --> 000203d4
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810570000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002011c --> 0002011c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000008 --> 00000008
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810710000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020120 --> 00020120
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000009 --> 00000009
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810830000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                000203dc --> 000203e0
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000000 --> 00000000
+# av_write                  0 --> 0
+# av_read                   1 --> 1
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810850000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020124 --> 00020124
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000a --> 0000000a
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5810990000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020128 --> 00020128
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000b --> 0000000b
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811130000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002012c --> 0002012c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000c --> 0000000c
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811270000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020130 --> 00020130
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000d --> 0000000d
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811410000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020134 --> 00020134
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000e --> 0000000e
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811550000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020138 --> 00020138
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              0000000f --> 0000000f
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811690000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002013c --> 0002013c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000010 --> 00000010
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811830000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020140 --> 00020140
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000011 --> 00000011
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5811990000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020144 --> 00020144
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000012 --> 00000012
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5812130000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020148 --> 00020148
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000013 --> 00000013
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5812270000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                0002014c --> 0002014c
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000014 --> 00000014
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5812410000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020150 --> 00020150
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000015 --> 00000015
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+#           5812550000: system_tb.system_inst.mm_interconnect_0.dma_controller_avalon_master_1_translator: Error: Input controls/data changed while av_waitrequest is asserted.
+# av_address                00020154 --> 00020154
+# av_byteenable             f --> f
+# av_burstcount             1 --> 1
+# av_writedata              00000016 --> 00000016
+# av_write                  1 --> 0
+# av_read                   0 --> 0
+# av_lock                   0 --> 0
+# av_chipselect             0 --> 0
+# av_debugaccess            0 --> 0
+# DMA GO bit set.
+# Polling DMA Status (Reg 5)...
+# DMA DONE bit detected.
+# 
+# Flushing D-Cache for destination buffer...
+# D-Cache flushed.
+# 
+# Verifying DMA transfer...
+# Verifying 32 words...
+# Mismatch at index 0: expected 0x00000002, got 0x00000021
+Mismatch at index 1# End time: 11:32:31 on Apr 09,2025, Elapsed time: 0:29:38
+# Errors: 0, Warnings: 96

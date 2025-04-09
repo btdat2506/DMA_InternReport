@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbtgui.launch.modelsim.Nios2ModelsimLaunchConfiguration">
+<stringAttribute key="elfFile" value="D:\FETEL_WorkDir\Y4S2_DMA_InternReport\software\DMA_NiosII\DMA_NiosII.elf"/>
+<stringAttribute key="modelSimPath" value="D:\FETEL_WorkSoft\questasim64_2024.1\win64"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.debug.cdi.gdb.plugin.Nios2GdbCdiDebugger"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="DMA_NiosII.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="DMA_NiosII"/>
+<stringAttribute key="spdPath" value="d:\FETEL_WorkDir\Y4S2_DMA_InternReport\system_tb.spd"/>
+</launchConfiguration>

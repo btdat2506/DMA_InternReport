@@ -18,6 +18,7 @@ module DMAController (
     output         oWM_write,
     output [31:0]  oWM_writeaddress,
     output [31:0]  oWM_writedata,
+    output [3:0]   oWM_byteenable, // <<< ADDED PORT
     input          iWM_waitrequest
 );
     // Internal Signals
@@ -51,7 +52,7 @@ module DMAController (
         .WM_done(WM_done)
     );
 
-    // Instantiate READ_MASTER
+    // Instantiate READ_MASTER (Use revised version)
     READ_MASTER u_READ_MASTER (
         .iClk(iClk),
         .iReset_n(iReset_n),
@@ -68,7 +69,7 @@ module DMAController (
         .iRM_readdata(iRM_readdata)
     );
 
-    // Instantiate WRITE_MASTER
+    // Instantiate WRITE_MASTER (Use revised version with byteenable)
     WRITE_MASTER u_WRITE_MASTER (
         .iClk(iClk),
         .iReset_n(iReset_n),
@@ -81,22 +82,12 @@ module DMAController (
         .oWM_write(oWM_write),
         .oWM_writeaddress(oWM_writeaddress),
         .oWM_writedata(oWM_writedata),
+        .oWM_byteenable(oWM_byteenable), // <<< CONNECTED PORT
         .iWM_waitrequest(iWM_waitrequest),
         .WM_done(WM_done)
     );
 
-    // Instantiate FIFO (256 words deep, 32 bits wide)
-    /* FIFO u_FIFO (
-        .iClk(iClk),
-        .iReset_n(iReset_n),
-        .FF_writerequest(FF_writerequest),
-        .FF_data(FF_data),
-        .FF_readrequest(FF_readrequest),
-        .FF_q(FF_q),
-        .FF_empty(FF_empty),
-        .FF_almostfull(FF_almostfull)
-    ); */
-
+    // Instantiate FIFO
     wire FF_full;
     FIFO_IP	FIFO_IP_inst (
         .aclr (~iReset_n),

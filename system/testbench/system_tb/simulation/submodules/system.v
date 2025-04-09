@@ -15,6 +15,7 @@ module system (
 	wire         dma_controller_avalon_master_readdatavalid;                  // mm_interconnect_0:DMA_Controller_avalon_master_readdatavalid -> DMA_Controller:iRM_readdatavalid
 	wire         dma_controller_avalon_master_1_waitrequest;                  // mm_interconnect_0:DMA_Controller_avalon_master_1_waitrequest -> DMA_Controller:iWM_waitrequest
 	wire  [31:0] dma_controller_avalon_master_1_address;                      // DMA_Controller:oWM_writeaddress -> mm_interconnect_0:DMA_Controller_avalon_master_1_address
+	wire   [3:0] dma_controller_avalon_master_1_byteenable;                   // DMA_Controller:oWM_byteenable -> mm_interconnect_0:DMA_Controller_avalon_master_1_byteenable
 	wire  [31:0] dma_controller_avalon_master_1_writedata;                    // DMA_Controller:oWM_writedata -> mm_interconnect_0:DMA_Controller_avalon_master_1_writedata
 	wire         dma_controller_avalon_master_1_write;                        // DMA_Controller:oWM_write -> mm_interconnect_0:DMA_Controller_avalon_master_1_write
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                           // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
@@ -29,13 +30,6 @@ module system (
 	wire         nios2_gen2_0_instruction_master_waitrequest;                 // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
 	wire  [18:0] nios2_gen2_0_instruction_master_address;                     // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                        // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
-	wire         mm_interconnect_0_onchip_memory2_1_s1_chipselect;            // mm_interconnect_0:onchip_memory2_1_s1_chipselect -> onchip_memory2_1:chipselect
-	wire  [31:0] mm_interconnect_0_onchip_memory2_1_s1_readdata;              // onchip_memory2_1:readdata -> mm_interconnect_0:onchip_memory2_1_s1_readdata
-	wire  [14:0] mm_interconnect_0_onchip_memory2_1_s1_address;               // mm_interconnect_0:onchip_memory2_1_s1_address -> onchip_memory2_1:address
-	wire   [3:0] mm_interconnect_0_onchip_memory2_1_s1_byteenable;            // mm_interconnect_0:onchip_memory2_1_s1_byteenable -> onchip_memory2_1:byteenable
-	wire         mm_interconnect_0_onchip_memory2_1_s1_write;                 // mm_interconnect_0:onchip_memory2_1_s1_write -> onchip_memory2_1:write
-	wire  [31:0] mm_interconnect_0_onchip_memory2_1_s1_writedata;             // mm_interconnect_0:onchip_memory2_1_s1_writedata -> onchip_memory2_1:writedata
-	wire         mm_interconnect_0_onchip_memory2_1_s1_clken;                 // mm_interconnect_0:onchip_memory2_1_s1_clken -> onchip_memory2_1:clken
 	wire         mm_interconnect_0_onchip_memory2_0_s1_chipselect;            // mm_interconnect_0:onchip_memory2_0_s1_chipselect -> onchip_memory2_0:chipselect
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_readdata;              // onchip_memory2_0:readdata -> mm_interconnect_0:onchip_memory2_0_s1_readdata
 	wire  [14:0] mm_interconnect_0_onchip_memory2_0_s1_address;               // mm_interconnect_0:onchip_memory2_0_s1_address -> onchip_memory2_0:address
@@ -43,6 +37,13 @@ module system (
 	wire         mm_interconnect_0_onchip_memory2_0_s1_write;                 // mm_interconnect_0:onchip_memory2_0_s1_write -> onchip_memory2_0:write
 	wire  [31:0] mm_interconnect_0_onchip_memory2_0_s1_writedata;             // mm_interconnect_0:onchip_memory2_0_s1_writedata -> onchip_memory2_0:writedata
 	wire         mm_interconnect_0_onchip_memory2_0_s1_clken;                 // mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
+	wire         mm_interconnect_0_onchip_memory2_1_s1_chipselect;            // mm_interconnect_0:onchip_memory2_1_s1_chipselect -> onchip_memory2_1:chipselect
+	wire  [31:0] mm_interconnect_0_onchip_memory2_1_s1_readdata;              // onchip_memory2_1:readdata -> mm_interconnect_0:onchip_memory2_1_s1_readdata
+	wire  [14:0] mm_interconnect_0_onchip_memory2_1_s1_address;               // mm_interconnect_0:onchip_memory2_1_s1_address -> onchip_memory2_1:address
+	wire   [3:0] mm_interconnect_0_onchip_memory2_1_s1_byteenable;            // mm_interconnect_0:onchip_memory2_1_s1_byteenable -> onchip_memory2_1:byteenable
+	wire         mm_interconnect_0_onchip_memory2_1_s1_write;                 // mm_interconnect_0:onchip_memory2_1_s1_write -> onchip_memory2_1:write
+	wire  [31:0] mm_interconnect_0_onchip_memory2_1_s1_writedata;             // mm_interconnect_0:onchip_memory2_1_s1_writedata -> onchip_memory2_1:writedata
+	wire         mm_interconnect_0_onchip_memory2_1_s1_clken;                 // mm_interconnect_0:onchip_memory2_1_s1_clken -> onchip_memory2_1:clken
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;    // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest; // jtag_uart_0:av_waitrequest -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_waitrequest
@@ -50,12 +51,6 @@ module system (
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_read -> jtag_uart_0:av_read_n
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_write -> jtag_uart_0:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
-	wire         mm_interconnect_0_dma_controller_avalon_slave_0_chipselect;  // mm_interconnect_0:DMA_Controller_avalon_slave_0_chipselect -> DMA_Controller:iChipselect
-	wire  [31:0] mm_interconnect_0_dma_controller_avalon_slave_0_readdata;    // DMA_Controller:oReaddata -> mm_interconnect_0:DMA_Controller_avalon_slave_0_readdata
-	wire   [2:0] mm_interconnect_0_dma_controller_avalon_slave_0_address;     // mm_interconnect_0:DMA_Controller_avalon_slave_0_address -> DMA_Controller:iAddress
-	wire         mm_interconnect_0_dma_controller_avalon_slave_0_read;        // mm_interconnect_0:DMA_Controller_avalon_slave_0_read -> DMA_Controller:iRead
-	wire         mm_interconnect_0_dma_controller_avalon_slave_0_write;       // mm_interconnect_0:DMA_Controller_avalon_slave_0_write -> DMA_Controller:iWrite
-	wire  [31:0] mm_interconnect_0_dma_controller_avalon_slave_0_writedata;   // mm_interconnect_0:DMA_Controller_avalon_slave_0_writedata -> DMA_Controller:iWritedata
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;     // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest;  // nios2_gen2_0:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_waitrequest
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess;  // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_debugaccess -> nios2_gen2_0:debug_mem_slave_debugaccess
@@ -64,6 +59,12 @@ module system (
 	wire   [3:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable;   // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_byteenable -> nios2_gen2_0:debug_mem_slave_byteenable
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write;        // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_write -> nios2_gen2_0:debug_mem_slave_write
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata;    // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_writedata -> nios2_gen2_0:debug_mem_slave_writedata
+	wire         mm_interconnect_0_dma_controller_avalon_slave_0_chipselect;  // mm_interconnect_0:DMA_Controller_avalon_slave_0_chipselect -> DMA_Controller:iChipselect
+	wire  [31:0] mm_interconnect_0_dma_controller_avalon_slave_0_readdata;    // DMA_Controller:oReaddata -> mm_interconnect_0:DMA_Controller_avalon_slave_0_readdata
+	wire   [2:0] mm_interconnect_0_dma_controller_avalon_slave_0_address;     // mm_interconnect_0:DMA_Controller_avalon_slave_0_address -> DMA_Controller:iAddress
+	wire         mm_interconnect_0_dma_controller_avalon_slave_0_read;        // mm_interconnect_0:DMA_Controller_avalon_slave_0_read -> DMA_Controller:iRead
+	wire         mm_interconnect_0_dma_controller_avalon_slave_0_write;       // mm_interconnect_0:DMA_Controller_avalon_slave_0_write -> DMA_Controller:iWrite
+	wire  [31:0] mm_interconnect_0_dma_controller_avalon_slave_0_writedata;   // mm_interconnect_0:DMA_Controller_avalon_slave_0_writedata -> DMA_Controller:iWritedata
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [DMA_Controller:iReset_n, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:DMA_Controller_reset_sink_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset]
@@ -89,7 +90,8 @@ module system (
 		.iWM_waitrequest   (dma_controller_avalon_master_1_waitrequest),                 // avalon_master_1.waitrequest
 		.oWM_writedata     (dma_controller_avalon_master_1_writedata),                   //                .writedata
 		.oWM_writeaddress  (dma_controller_avalon_master_1_address),                     //                .address
-		.oWM_write         (dma_controller_avalon_master_1_write)                        //                .write
+		.oWM_write         (dma_controller_avalon_master_1_write),                       //                .write
+		.oWM_byteenable    (dma_controller_avalon_master_1_byteenable)                   //                .byteenable
 	);
 
 	system_jtag_uart_0 jtag_uart_0 (
@@ -173,6 +175,7 @@ module system (
 		.DMA_Controller_avalon_master_readdatavalid            (dma_controller_avalon_master_readdatavalid),                  //                                                .readdatavalid
 		.DMA_Controller_avalon_master_1_address                (dma_controller_avalon_master_1_address),                      //                  DMA_Controller_avalon_master_1.address
 		.DMA_Controller_avalon_master_1_waitrequest            (dma_controller_avalon_master_1_waitrequest),                  //                                                .waitrequest
+		.DMA_Controller_avalon_master_1_byteenable             (dma_controller_avalon_master_1_byteenable),                   //                                                .byteenable
 		.DMA_Controller_avalon_master_1_write                  (dma_controller_avalon_master_1_write),                        //                                                .write
 		.DMA_Controller_avalon_master_1_writedata              (dma_controller_avalon_master_1_writedata),                    //                                                .writedata
 		.nios2_gen2_0_data_master_address                      (nios2_gen2_0_data_master_address),                            //                        nios2_gen2_0_data_master.address

@@ -192,19 +192,15 @@ module system_mm_interconnect_0_router_005
 
 
         if (destid == 1  && read_transaction) begin
-            src_channel = 5'b0001;
+            src_channel = 5'b001;
         end
 
         if (destid == 0  && write_transaction) begin
-            src_channel = 5'b0010;
+            src_channel = 5'b010;
         end
 
         if (destid == 2 ) begin
-            src_channel = 5'b0100;
-        end
-
-        if (destid == 3  && read_transaction) begin
-            src_channel = 5'b1000;
+            src_channel = 5'b100;
         end
 
 

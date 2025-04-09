@@ -53,6 +53,18 @@ module CONTROL_SLAVE (
                 endcase
             end
 
+            // Read Data Multiplexing
+            if (iChipselect && iRead) begin
+                case (iAddress)
+                    3'd0: readdata_reg = readaddress_reg;                  // readaddress
+                    3'd1: readdata_reg = writeaddress_reg;                 // writeaddress
+                    3'd2: readdata_reg = length_reg;                       // length
+                    3'd4: readdata_reg = {31'd0, control_go};              // control register
+                    3'd5: readdata_reg = {30'd0, status_busy, status_done}; // status register
+                    default: readdata_reg = 32'd0;
+                endcase
+            end
+
             // Control Logic
             if (control_go) begin
                 status_busy <= 1'b1;
@@ -64,22 +76,6 @@ module CONTROL_SLAVE (
                 status_done <= 1'b1;
                 control_go  <= 1'b0; // Clear GO after completion
             end
-        end
-    end
-
-    // Read Data Multiplexing
-    always @(*) begin
-        if (iChipselect && iRead) begin
-            case (iAddress)
-                3'd0: readdata_reg = readaddress_reg;                  // readaddress
-                3'd1: readdata_reg = writeaddress_reg;                 // writeaddress
-                3'd2: readdata_reg = length_reg;                       // length
-                3'd4: readdata_reg = {31'd0, control_go};              // control register
-                3'd5: readdata_reg = {30'd0, status_busy, status_done}; // status register
-                default: readdata_reg = 32'd0;
-            endcase
-        end else begin
-            readdata_reg = 32'd0;
         end
     end
 endmodule
